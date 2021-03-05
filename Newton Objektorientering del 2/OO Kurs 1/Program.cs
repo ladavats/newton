@@ -11,6 +11,8 @@ namespace OO_Kurs_1
     //En grundläggande klass
     public class Car
     {
+
+        //Test
         private string registrationNumber { get; set; }
         private DateTime registrationDate { get; set; }
 
