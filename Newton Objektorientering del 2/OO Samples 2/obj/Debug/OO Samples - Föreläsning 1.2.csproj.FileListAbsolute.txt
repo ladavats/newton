@@ -1,0 +1,7 @@
+C:\Users\Admin\Desktop\Newton\Code samples\Newton Objektorientering del 2\OO Samples 2\obj\Debug\OO Samples - Föreläsning 1.2.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\Newton\Code samples\Newton Objektorientering del 2\OO Samples 2\obj\Debug\OO Samples 2.exe
+C:\Users\Admin\Desktop\Newton\Code samples\Newton Objektorientering del 2\OO Samples 2\obj\Debug\OO Samples 2.pdb
+C:\Users\Admin\Desktop\Newton\Code samples\Newton Objektorientering del 2\OO Samples 2\bin\Debug\OO Samples 2.exe.config
+C:\Users\Admin\Desktop\Newton\Code samples\Newton Objektorientering del 2\OO Samples 2\bin\Debug\OO Samples 2.exe
+C:\Users\Admin\Desktop\Newton\Code samples\Newton Objektorientering del 2\OO Samples 2\bin\Debug\OO Samples 2.pdb
+C:\Users\Admin\Desktop\Newton\Code samples\Newton Objektorientering del 2\OO Samples 2\obj\Debug\OO Samples - Föreläsning 1.2.csprojAssemblyReference.cache
