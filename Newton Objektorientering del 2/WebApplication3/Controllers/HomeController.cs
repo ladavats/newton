@@ -56,12 +56,12 @@ namespace WebApplication3.Controllers
     {
         public void Add()
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
         }
 
         public void Delete()
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
         }
     }
 
@@ -69,12 +69,12 @@ namespace WebApplication3.Controllers
     {
         public void Add()
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
         }
 
         public void Delete()
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
         }
     }
 
@@ -91,7 +91,7 @@ namespace WebApplication3.Controllers
         public void Add()
         {
             //Sparar i SQL Databas
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
             //Data conncetion
             //Inser table
             //refresh
@@ -116,7 +116,7 @@ namespace WebApplication3.Controllers
         public void Add()
         {
             //Sparar ner i en Oracle
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
         }
 
         public void Delete()
