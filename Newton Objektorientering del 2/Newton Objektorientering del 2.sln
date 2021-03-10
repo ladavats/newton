@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client", "Client\Client.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "newton.webapi", "newton.webapi\newton.webapi.csproj", "{26B5AF39-E60E-488D-98DA-B2678B7A1E61}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "newton.webclient", "newton.webclient\newton.webclient.csproj", "{73BA0CCE-399C-422E-8572-F1D8E1E80FCC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{26B5AF39-E60E-488D-98DA-B2678B7A1E61}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{26B5AF39-E60E-488D-98DA-B2678B7A1E61}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{26B5AF39-E60E-488D-98DA-B2678B7A1E61}.Release|Any CPU.Build.0 = Release|Any CPU
+		{73BA0CCE-399C-422E-8572-F1D8E1E80FCC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73BA0CCE-399C-422E-8572-F1D8E1E80FCC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73BA0CCE-399C-422E-8572-F1D8E1E80FCC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73BA0CCE-399C-422E-8572-F1D8E1E80FCC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
