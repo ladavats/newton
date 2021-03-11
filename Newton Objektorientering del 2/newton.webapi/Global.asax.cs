@@ -15,18 +15,8 @@ namespace newton.webapi
     {
         protected void Application_Start()
         {
-            // Create the container as usual.
-            var container = new Container();
-            container.Options.DefaultScopedLifestyle = new AsyncScopedLifestyle();
-            // Register your types, for instance using the scoped lifestyle:
-            container.Register<IBankAccountService, NordeaBankAccountService>(Lifestyle.Scoped);
-            // This is an extension method from the integration package.
-            container.RegisterWebApiControllers(GlobalConfiguration.Configuration);
-
-            container.Verify();
-
-            GlobalConfiguration.Configuration.DependencyResolver = new SimpleInjectorWebApiDependencyResolver(container);
             GlobalConfiguration.Configure(WebApiConfig.Register);
+            GlobalConfiguration.Configure(WebApiConfig.SetupSimpleInjector);
         }
     }
 }
