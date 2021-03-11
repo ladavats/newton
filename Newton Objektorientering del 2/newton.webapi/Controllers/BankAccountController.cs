@@ -12,6 +12,7 @@ namespace newton.webapi.Controllers
     public class BankAccountController : ApiController
     {
         private readonly IBankAccountService bankaccountservice;
+        
         public BankAccountController(IBankAccountService bankaccountservice)
         {
             this.bankaccountservice = bankaccountservice;
@@ -36,7 +37,10 @@ namespace newton.webapi.Controllers
         [Route("api/bankaccount")]
         public IHttpActionResult CreateBankAccount(CreateBankAccountRequest request)
         {
-            return Ok(bankaccountservice.CreateBankAccount(request.FirstName, request.LastName, request.SocialSecurityNumber));
+            var createdaccount = bankaccountservice.CreateBankAccount(request.FirstName, request.LastName, request.SocialSecurityNumber);
+            //repositoryservice.Create(createdaccount);
+            return Ok();
+
         }
 
 

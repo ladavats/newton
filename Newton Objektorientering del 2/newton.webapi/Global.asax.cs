@@ -16,7 +16,7 @@ namespace newton.webapi
         protected void Application_Start()
         {
             GlobalConfiguration.Configure(WebApiConfig.Register);
-            GlobalConfiguration.Configure(WebApiConfig.SetupSimpleInjector);
+            GlobalConfiguration.Configure(WebApiConfig.RegisterSimpleInjector);
         }
     }
 }

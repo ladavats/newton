@@ -13,5 +13,7 @@ namespace newton.webapi.Models
         void Withdraw(int customerId, int amount);
         void Deposit(int customerId, int amount);
         IBankAccount CreateBankAccount(string firstName, string lastName, string socialSecurityNumber);
+
+        //Verify Withdraw
     }
 }

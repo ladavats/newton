@@ -26,8 +26,7 @@ namespace newton.webapi
             );
         }
 
-
-        public static void SetupSimpleInjector(HttpConfiguration config)
+        public static void RegisterSimpleInjector(HttpConfiguration config)
         {
             // Create the container as usual.
             var container = new Container();
