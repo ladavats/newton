@@ -106,10 +106,10 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\BankAccount.cs" />
-    <Compile Include="Models\dto\CreateBankAccountRequest.cs" />
     <Compile Include="Models\dto\CustomerDepositRequest.cs" />
     <Compile Include="Models\dto\CustomerRequest.cs" />
     <Compile Include="Models\dto\CustomerWithdrawRequest.cs" />
+    <Compile Include="Models\dto\dataaccess\BankAccount.cs" />
     <Compile Include="Models\IBankAccountService.cs" />
     <Compile Include="Models\IBankAccount.cs" />
     <Compile Include="Models\NordeaBankAccountService.cs" />
@@ -120,6 +120,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\newton.dto\newton.dto.csproj">
+      <Project>{1863366b-ad66-4fd4-809c-23a7d1c32dee}</Project>
+      <Name>newton.dto</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -75,3 +75,5 @@ C:\Users\Admin\Desktop\Newton\github\Newton Objektorientering del 2\newton.webap
 C:\Users\Admin\Desktop\Newton\github\Newton Objektorientering del 2\newton.webapi\bin\SimpleInjector.Integration.WebApi.xml
 C:\Users\Admin\Desktop\Newton\github\Newton Objektorientering del 2\newton.webapi\bin\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\Admin\Desktop\Newton\github\Newton Objektorientering del 2\newton.webapi\bin\System.Threading.Tasks.Extensions.xml
+C:\Users\Admin\Desktop\Newton\github\Newton Objektorientering del 2\newton.webapi\bin\newton.dto.dll
+C:\Users\Admin\Desktop\Newton\github\Newton Objektorientering del 2\newton.webapi\bin\newton.dto.pdb

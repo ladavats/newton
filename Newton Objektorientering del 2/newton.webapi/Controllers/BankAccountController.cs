@@ -1,4 +1,5 @@
-﻿using newton.webapi.Models;
+﻿using newton.dto;
+using newton.webapi.Models;
 using newton.webapi.Models.dto;
 using System;
 using System.Collections.Generic;
