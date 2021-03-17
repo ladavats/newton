@@ -39,7 +39,7 @@ namespace newton.webclient.Controllers
 
             using (HttpClient client = new HttpClient())
             {
-                var response = client.PostAsync(new Uri("UrlToWebApiCreateBankAccount"), httpContent).Result; //GetAsync utan Result.
+                var response = client.PostAsync(new Uri("UrlToWebApiCreateBankAccount"), httpContent).Result;
                 if (response.StatusCode == System.Net.HttpStatusCode.OK)
                     return View("BankAccountCreated");
 
