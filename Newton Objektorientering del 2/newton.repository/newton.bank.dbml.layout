@@ -20,5 +20,11 @@
         <elementListCompartment Id="6f49df82-cf3f-476b-a8cf-e8775f01ef39" absoluteBounds="0.76500000000000012, 2.585, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
+    <classShape Id="43bd1544-3d94-48b9-8a2d-c07d7c07cc80" absoluteBounds="3.375, 4, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/newton_bankDataContext/Insurance" />
+      <nestedChildShapes>
+        <elementListCompartment Id="093ccfd0-024f-4cb6-94c9-781e500772e6" absoluteBounds="3.3899999999999997, 4.46, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
   </nestedChildShapes>
 </ordesignerObjectsDiagram>

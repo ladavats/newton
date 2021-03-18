@@ -16,6 +16,5 @@ namespace newton.webapi.Models
 
         void Withdraw(int amount);
         void Deposit(int amount);
-
     }
 }

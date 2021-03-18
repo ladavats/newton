@@ -41,6 +41,7 @@ namespace newton.webapi.Models
 
         public void Withdraw(int customerId, int amount)
         {
+
             var selectedBankAccount = bankaccounts.Where(o => o.CustomerId == customerId).Single();
 
             if (AmountIsTooHighForBalance(selectedBankAccount.Balance, amount))

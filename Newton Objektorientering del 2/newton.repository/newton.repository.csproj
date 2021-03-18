@@ -43,11 +43,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="classes\AzureBlogStorageRepository.cs" />
+    <Compile Include="classes\LocalSqlInsuranceStorage.cs" />
     <Compile Include="dto\BankAccountDTO.cs" />
     <Compile Include="dto\CreateBankAccountDTO.cs" />
     <Compile Include="dto\CreateCustomerDTO.cs" />
+    <Compile Include="dto\CreateInsuranceDTO.cs" />
     <Compile Include="dto\CustomerDTO.cs" />
-    <Compile Include="interfaces\IRepositoryService.cs" />
+    <Compile Include="dto\GetInsuranceDTO.cs" />
+    <Compile Include="interfaces\IInsuranceRepository.cs" />
+    <Compile Include="interfaces\IRepository.cs" />
     <Compile Include="classes\LocalSqlDataStorage.cs" />
     <Compile Include="newton.bank.designer.cs">
       <AutoGen>True</AutoGen>

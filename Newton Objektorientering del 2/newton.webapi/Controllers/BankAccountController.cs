@@ -15,12 +15,16 @@ namespace newton.webapi.Controllers
     public class BankAccountController : ApiController
     {
         private readonly IBankAccountService bankaccountservice;
-        private readonly IRepositoryService bankrepositoryservice;
+        private readonly IRepository bankrepository;
+        private readonly IInsuranceRepository insurancerepository;
+
         public BankAccountController(IBankAccountService bankaccountservice,
-                                     IRepositoryService bankrepositoryservice)
+                                     IRepository bankrepository,
+                                     IInsuranceRepository insurancerepository)
         {
             this.bankaccountservice = bankaccountservice;
-            this.bankrepositoryservice = bankrepositoryservice;
+            this.bankrepository = bankrepository;
+            this.insurancerepository = insurancerepository;
         }
 
         [HttpGet]
@@ -42,21 +46,32 @@ namespace newton.webapi.Controllers
         [Route("api/bankaccount")]
         public IHttpActionResult CreateBankAccount(CreateBankAccountRequest request)
         {
+            var bankaccount = bankaccountservice.CreateBankAccount(request.FirstName, request.LastName, request.SocialSecurityNumber);
 
             //Incorrect AutoSync specification for member 'Id'.
             var new_customer = new CreateCustomerDTO()
             {
-                FirstName = request.FirstName,
-                LastName = request.LastName,
-                SocialSecurityNumber = request.SocialSecurityNumber
+                FirstName = bankaccount.FirstName,
+                LastName = bankaccount.LastName,
+                SocialSecurityNumber = bankaccount.SocialSecurityNumber
             };
-            bankrepositoryservice.CreateCustomer(new_customer);
+            bankrepository.CreateCustomer(new_customer);
 
             var new_bankaccount = new CreateBankAccountDTO
             {
-                Balance = 100
+                Balance = bankaccount.Balance
             };
-            bankrepositoryservice.CreateBankAccount(new_bankaccount);
+            bankrepository.CreateBankAccount(new_bankaccount);
+
+            var new_insurance = new CreateInsuranceDTO()
+            {
+                CustomerId = 1,
+                Name = "Inkomstförsäkring",
+                Description = "Denna försäkring gör att tu inte tappar inkomst vid arbetsbortfall"
+            };
+
+            insurancerepository.Create(new_insurance);
+
 
             return Ok();
         }
