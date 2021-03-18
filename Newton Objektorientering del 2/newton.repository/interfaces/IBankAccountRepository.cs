@@ -1,5 +1,4 @@
 ﻿using newton.domain.models.bankaccount.interfaces;
-using newton.repository.dto;
 using System;
 using System.Collections.Generic;
 using System.Linq;

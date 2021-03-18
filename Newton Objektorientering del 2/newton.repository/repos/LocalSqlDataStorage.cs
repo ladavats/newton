@@ -1,7 +1,6 @@
 ﻿using newton.domain.models.bankaccount.interfaces;
 using newton.domain.models.customer.interfaces;
 using newton.domain.models.insurance.interfaces;
-using newton.repository.dto;
 using newton.repository.interfaces;
 using System;
 using System.Collections.Generic;
@@ -40,29 +39,29 @@ namespace newton.repository.repos
             throw new NotImplementedException();
         }
 
-        public void CreateBankAccount(CreateBankAccountDTO bankaccount)
-        {
-            var new_bankaccount = new BankAccount
-            {
-                Balance = bankaccount.Balance
-            };
+        //public void CreateBankAccount(CreateBankAccountDTO bankaccount)
+        //{
+        //    var new_bankaccount = new BankAccount
+        //    {
+        //        Balance = bankaccount.Balance
+        //    };
 
-            datacontext.BankAccounts.InsertOnSubmit(new_bankaccount);
-            datacontext.SubmitChanges();
-        }
+        //    datacontext.BankAccounts.InsertOnSubmit(new_bankaccount);
+        //    datacontext.SubmitChanges();
+        //}
 
-        public void CreateCustomer(CreateCustomerDTO customer)
-        {
-            var new_customer = new Customer
-            {
-                FirstName = customer.FirstName,
-                LastName = customer.LastName,
-                SocialSecurityNumber = customer.SocialSecurityNumber
-            };
+        //public void CreateCustomer(CreateCustomerDTO customer)
+        //{
+        //    var new_customer = new Customer
+        //    {
+        //        FirstName = customer.FirstName,
+        //        LastName = customer.LastName,
+        //        SocialSecurityNumber = customer.SocialSecurityNumber
+        //    };
 
-            datacontext.Customers.InsertOnSubmit(new_customer);
-            datacontext.SubmitChanges();
-        }
+        //    datacontext.Customers.InsertOnSubmit(new_customer);
+        //    datacontext.SubmitChanges();
+        //}
 
         IInsurance IInsuranceRepository.GetById(int insuranceId)
         {

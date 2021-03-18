@@ -43,12 +43,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="repos\AzureBlogStorageRepository.cs" />
-    <Compile Include="dto\BankAccountDTO.cs" />
-    <Compile Include="dto\CreateBankAccountDTO.cs" />
-    <Compile Include="dto\CreateCustomerDTO.cs" />
-    <Compile Include="dto\CreateInsuranceDTO.cs" />
-    <Compile Include="dto\CustomerDTO.cs" />
-    <Compile Include="dto\GetInsuranceDTO.cs" />
     <Compile Include="interfaces\ICustomerRepository.cs" />
     <Compile Include="interfaces\IInsuranceRepository.cs" />
     <Compile Include="interfaces\IBankAccountRepository.cs" />

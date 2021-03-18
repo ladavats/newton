@@ -1,7 +1,6 @@
 ﻿using newton.domain.models.bankaccount.interfaces;
 using newton.domain.models.customer.interfaces;
 using newton.domain.models.insurance.interfaces;
-using newton.repository.dto;
 using newton.repository.interfaces;
 using System;
 using System.Collections.Generic;

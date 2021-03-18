@@ -1,5 +1,4 @@
 ﻿using newton.domain.models.insurance.interfaces;
-using newton.repository.dto;
 using System.Collections.Generic;
 
 namespace newton.repository.interfaces
