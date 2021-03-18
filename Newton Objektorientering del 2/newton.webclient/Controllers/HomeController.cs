@@ -47,6 +47,50 @@ namespace newton.webclient.Controllers
             return View("BankAccountNotCreated");
         }
     }
+}
+    //public ActionResult GetPerson()
+    //{
+
+
+    //    using (HttpClient client = new HttpClient())
+    //    {
+    //        var response = client.GetAsync(urlGetPerson).Result; //GetAsync utan Result.
+    //        if (response != null)
+    //        {
+    //            var jsonString = response.Content.ReadAsStringAsync().Result;
+    //            var person = JsonConvert.DeserializeObject<Person>(jsonString);
+    //            ViewBag.Message = "Tack för att du hämtade en person med förnamn: " + person.FirstName;
+    //        }
+    //    }
+    //    return View("About");
+    //}
+
+    ////Denna kan göras till Async - men inte nu.
+    //public ActionResult AddPerson()
+    //{
+    //    Person personToSendToServerDTO = new Person
+    //    {
+    //        Id = 100,
+    //        FirstName = "Peter",
+    //        LastName = "Ladavats",
+    //        Age = 39
+    //    };
+
+    //    //Samma sak som Person objekt fast i sträng. Så här vill vi inte arbeta.
+    //    //string jsonPerson = "{\"Id\":1,\"FirstName\":\"Peter\",\"LastName\":\"Ladavats\",\"Age\":39}";
+
+    //    using (HttpClient client = new HttpClient())
+    //    {
+    //        var personJsonString = JsonConvert.SerializeObject(personToSendToServerDTO);
+    //        var content = new StringContent(personJsonString, Encoding.UTF8, "application/json");
+    //        var response = client.PostAsync(urlAddPerson, content).Result; //PostAsync utan Result.
+    //    }
+
+    //    ViewBag.Message = "Tack för att du lade till en person";
+    //    return View("About");
+    //}
+
+
 
     //class PetersWayOfCreateBankAccount : ICreateBankAccount
     //{
@@ -54,4 +98,4 @@ namespace newton.webclient.Controllers
     //    public string LastName { get; set; }
     //    public string SocialSecurityNumber { get; set; }
     //}
-}
+

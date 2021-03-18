@@ -12,19 +12,22 @@ namespace newton.repository.repos
 {
     public class LocalSqlDataStorage : ICustomerRepository, IInsuranceRepository, IBankAccountRepository
     {
-        private readonly newton_bankDataContext datacontext;
-        public LocalSqlDataStorage()
-        {
-            datacontext = new newton_bankDataContext();
-        }
-
-
         public void Delete(int customerId)
         {
             throw new NotImplementedException();
         }
 
+        public IEnumerable<IBankAccount> GetAllBankAccounts()
+        {
+            throw new NotImplementedException();
+        }
+
         public IEnumerable<ICustomer> GetAllCustomers()
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<IInsurance> GetAllInsurances()
         {
             throw new NotImplementedException();
         }
@@ -39,56 +42,22 @@ namespace newton.repository.repos
             throw new NotImplementedException();
         }
 
-        //public void CreateBankAccount(CreateBankAccountDTO bankaccount)
-        //{
-        //    var new_bankaccount = new BankAccount
-        //    {
-        //        Balance = bankaccount.Balance
-        //    };
+        public IInsurance Update(IInsurance insuranceId)
+        {
+            throw new NotImplementedException();
+        }
 
-        //    datacontext.BankAccounts.InsertOnSubmit(new_bankaccount);
-        //    datacontext.SubmitChanges();
-        //}
-
-        //public void CreateCustomer(CreateCustomerDTO customer)
-        //{
-        //    var new_customer = new Customer
-        //    {
-        //        FirstName = customer.FirstName,
-        //        LastName = customer.LastName,
-        //        SocialSecurityNumber = customer.SocialSecurityNumber
-        //    };
-
-        //    datacontext.Customers.InsertOnSubmit(new_customer);
-        //    datacontext.SubmitChanges();
-        //}
+        public IBankAccount Update(IBankAccount account)
+        {
+            throw new NotImplementedException();
+        }
 
         IInsurance IInsuranceRepository.GetById(int insuranceId)
         {
             throw new NotImplementedException();
         }
 
-        public IEnumerable<IInsurance> GetAllInsurances()
-        {
-            throw new NotImplementedException();
-        }
-
-        public IInsurance Update(IInsurance insuranceId)
-        {
-            throw new NotImplementedException();
-        }
-
         IBankAccount IBankAccountRepository.GetById(int accountId)
-        {
-            throw new NotImplementedException();
-        }
-
-        public IEnumerable<IBankAccount> GetAllBankAccounts()
-        {
-            throw new NotImplementedException();
-        }
-
-        public IBankAccount Update(IBankAccount account)
         {
             throw new NotImplementedException();
         }
