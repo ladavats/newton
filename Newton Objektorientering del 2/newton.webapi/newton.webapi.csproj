@@ -100,18 +100,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Controllers\BankAccountController.cs" />
+    <Compile Include="Controllers\BankController.cs" />
     <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\BankAccount.cs" />
-    <Compile Include="Models\dto\CustomerDepositRequest.cs" />
-    <Compile Include="Models\dto\CustomerRequest.cs" />
-    <Compile Include="Models\dto\CustomerWithdrawRequest.cs" />
-    <Compile Include="Models\dto\dataaccess\BankAccount.cs" />
     <Compile Include="Models\IBankAccountService.cs" />
-    <Compile Include="Models\IBankAccount.cs" />
     <Compile Include="Models\NordeaBankAccountService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -122,6 +116,10 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\newton.domain.models\newton.domain.models.csproj">
+      <Project>{49c48726-f480-460b-869b-2d545dc6ec9d}</Project>
+      <Name>newton.domain.models</Name>
+    </ProjectReference>
     <ProjectReference Include="..\newton.dto\newton.dto.csproj">
       <Project>{1863366b-ad66-4fd4-809c-23a7d1c32dee}</Project>
       <Name>newton.dto</Name>

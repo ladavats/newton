@@ -80,3 +80,5 @@ C:\Users\Admin\Desktop\Newton\github\Newton Objektorientering del 2\newton.webap
 C:\Users\Admin\Desktop\Newton\github\Newton Objektorientering del 2\newton.webapi\bin\newton.repository.dll
 C:\Users\Admin\Desktop\Newton\github\Newton Objektorientering del 2\newton.webapi\bin\newton.repository.pdb
 C:\Users\Admin\Desktop\Newton\github\Newton Objektorientering del 2\newton.webapi\bin\newton.repository.dll.config
+C:\Users\Admin\Desktop\Newton\github\Newton Objektorientering del 2\newton.webapi\bin\newton.domain.models.dll
+C:\Users\Admin\Desktop\Newton\github\Newton Objektorientering del 2\newton.webapi\bin\newton.domain.models.pdb

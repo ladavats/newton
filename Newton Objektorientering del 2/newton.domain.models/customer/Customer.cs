@@ -1,11 +1,13 @@
-﻿using System;
+﻿using newton.domain.models.customer.interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace newton.webapi.Models
+namespace newton.domain.models.customer
 {
-    public class BankAccount : IBankAccount
+    public class Customer : ICustomer
     {
         private int customerId { get; set; }
         private string firstName { get; set; }
@@ -19,23 +21,11 @@ namespace newton.webapi.Models
         public string SocialSecurityNumber => socialSecurityNumber;
         public int Balance => balance;
 
-        public BankAccount(int customerId, string firstName, string lastName, string socialSecurityNumber)
+        public Customer(string firstName, string lastName, string socialSecurityNumber)
         {
-            this.customerId = customerId;
             this.firstName = firstName;
             this.lastName = lastName;
             this.socialSecurityNumber = socialSecurityNumber;
-            this.balance = 0;
-        }
-
-        public void Withdraw(int amount)
-        {
-            this.balance -= amount;
-        }
-
-        public void Deposit(int amount)
-        {
-            this.balance += amount;
         }
     }
 }

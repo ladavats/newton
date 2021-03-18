@@ -42,17 +42,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="classes\AzureBlogStorageRepository.cs" />
-    <Compile Include="classes\LocalSqlInsuranceStorage.cs" />
+    <Compile Include="repos\AzureBlogStorageRepository.cs" />
     <Compile Include="dto\BankAccountDTO.cs" />
     <Compile Include="dto\CreateBankAccountDTO.cs" />
     <Compile Include="dto\CreateCustomerDTO.cs" />
     <Compile Include="dto\CreateInsuranceDTO.cs" />
     <Compile Include="dto\CustomerDTO.cs" />
     <Compile Include="dto\GetInsuranceDTO.cs" />
+    <Compile Include="interfaces\ICustomerRepository.cs" />
     <Compile Include="interfaces\IInsuranceRepository.cs" />
-    <Compile Include="interfaces\IRepository.cs" />
-    <Compile Include="classes\LocalSqlDataStorage.cs" />
+    <Compile Include="interfaces\IBankAccountRepository.cs" />
+    <Compile Include="repos\LocalSqlDataStorage.cs" />
     <Compile Include="newton.bank.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -83,6 +83,11 @@
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\newton.domain.models\newton.domain.models.csproj">
+      <Project>{49c48726-f480-460b-869b-2d545dc6ec9d}</Project>
+      <Name>newton.domain.models</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

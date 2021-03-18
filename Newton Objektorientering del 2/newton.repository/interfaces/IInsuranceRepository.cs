@@ -1,10 +1,14 @@
-﻿using newton.repository.dto;
+﻿using newton.domain.models.insurance.interfaces;
+using newton.repository.dto;
+using System.Collections.Generic;
 
 namespace newton.repository.interfaces
 {
     public interface IInsuranceRepository
     {
-        void Create(CreateInsuranceDTO insurance);
-        GetInsuranceDTO Get(int insuranceId);
+        IInsurance GetById(int insuranceId);
+        IEnumerable<IInsurance> GetAllInsurances();
+        IInsurance Update(IInsurance insuranceId);
+        void Delete(int insuranceId);
     }
 }

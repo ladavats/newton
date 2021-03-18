@@ -8,12 +8,7 @@ namespace newton.webapi.Models
 {
     public interface IBankAccountService
     {
-        IList<IBankAccount> GetAllBankAccounts();
-        IBankAccount GetBankAccount(int customerId);
         void Withdraw(int customerId, int amount);
         void Deposit(int customerId, int amount);
-        IBankAccount CreateBankAccount(string firstName, string lastName, string socialSecurityNumber);
-
-        //Verify Withdraw
     }
 }

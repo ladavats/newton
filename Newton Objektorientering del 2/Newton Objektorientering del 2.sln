@@ -23,6 +23,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "newton.dto", "newton.dto\ne
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "newton.repository", "newton.repository\newton.repository.csproj", "{0E5776D1-026F-4003-A6F9-896DABEC176A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "newton.domain.models", "newton.domain.models\newton.domain.models.csproj", "{49C48726-F480-460B-869B-2D545DC6EC9D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +71,10 @@ Global
 		{0E5776D1-026F-4003-A6F9-896DABEC176A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0E5776D1-026F-4003-A6F9-896DABEC176A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0E5776D1-026F-4003-A6F9-896DABEC176A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49C48726-F480-460B-869B-2D545DC6EC9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49C48726-F480-460B-869B-2D545DC6EC9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49C48726-F480-460B-869B-2D545DC6EC9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49C48726-F480-460B-869B-2D545DC6EC9D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
