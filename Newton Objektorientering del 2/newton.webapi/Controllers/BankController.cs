@@ -1,4 +1,5 @@
-﻿using newton.dto;
+﻿using newton.domain.models.customer;
+using newton.dto;
 using newton.repository.interfaces;
 using newton.webapi.Models;
 using System;
@@ -46,32 +47,8 @@ namespace newton.webapi.Controllers
         [Route("api/customer")]
         public IHttpActionResult CreateCustomer(CreateCustomerRequest request)
         {
-            //var bankaccount = bankaccountservice.CreateBankAccount(request.FirstName, request.LastName, request.SocialSecurityNumber);
-
-            //Incorrect AutoSync specification for member 'Id'.
-            //var new_customer = new CreateCustomerDTO()
-            //{
-            //    FirstName = bankaccount.FirstName,
-            //    LastName = bankaccount.LastName,
-            //    SocialSecurityNumber = bankaccount.SocialSecurityNumber
-            //};
-            //bankrepository.CreateCustomer(new_customer);
-
-            //var new_bankaccount = new CreateBankAccountDTO
-            //{
-            //    Balance = bankaccount.Balance
-            //};
-            //bankrepository.CreateBankAccount(new_bankaccount);
-
-            //var new_insurance = new CreateInsuranceDTO()
-            //{
-            //    CustomerId = 1,
-            //    Name = "Inkomstförsäkring",
-            //    Description = "Denna försäkring gör att tu inte tappar inkomst vid arbetsbortfall"
-            //};
-
-            //insurancerepository.Create(new_insurance);
-
+            var customer = new Customer(request.FirstName, request.LastName, request.SocialSecurityNumber);
+            _customerRepository.Create(customer);
 
             return Ok();
         }

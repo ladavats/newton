@@ -12,6 +12,25 @@ namespace newton.repository.repos
 {
     public class LocalSqlDataStorage : ICustomerRepository, IInsuranceRepository, IBankAccountRepository
     {
+        private readonly newton_bankDataContext datacontext;
+        public LocalSqlDataStorage()
+        {
+            datacontext = new newton_bankDataContext();
+        }
+        public void Create(ICustomer customer)
+        {
+            var newCustomer = new Customer
+            {
+                FirstName = customer.FirstName,
+                LastName = customer.LastName,
+                SocialSecurityNumber = customer.SocialSecurityNumber,
+                Info = "Customer is also a programmer"
+            };
+
+            datacontext.Customers.InsertOnSubmit(newCustomer);
+            datacontext.SubmitChanges();
+        }
+
         public void Delete(int customerId)
         {
             throw new NotImplementedException();

@@ -12,6 +12,11 @@ namespace newton.repository.repos
 {
     class AzureBlobStorageRepository : ICustomerRepository, IInsuranceRepository, IBankAccountRepository
     {
+        public void Create(ICustomer customer)
+        {
+            throw new NotImplementedException();
+        }
+
         public void Delete(int customerId)
         {
             throw new NotImplementedException();

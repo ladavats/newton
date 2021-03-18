@@ -30,17 +30,18 @@ namespace newton.webclient.Controllers
                 SocialSecurityNumber = model.SocialSecurityNumber
             };
 
-            string jsonCreateBankAccountDTOasString = JsonConvert.SerializeObject(createCustomerRequest);
-            var httpContent = new StringContent(jsonCreateBankAccountDTOasString, Encoding.UTF8, "application/json");
+            string jsonCreateCustomer = JsonConvert.SerializeObject(createCustomerRequest);
+            var httpContent = new StringContent(jsonCreateCustomer, Encoding.UTF8, "application/json");
 
             using (HttpClient client = new HttpClient())
             {
                 var response = client.PostAsync(new Uri(createCustomerUrl), httpContent).Result;
-                if (response.StatusCode == System.Net.HttpStatusCode.OK)
-                    return View("BankAccountCreated");
-
+                if (response.StatusCode != System.Net.HttpStatusCode.OK)
+                    return View("Error");
             }
-            return View("BankAccountNotCreated");
+            
+            
+            return View("~/Views/Customer/CustomerCreated.cshtml");
         }
     }
 }
