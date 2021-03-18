@@ -13,5 +13,7 @@ namespace newton.domain.models.customer.interfaces
         string LastName { get; }
         string SocialSecurityNumber { get; }
 
+        string Info { get; }
+
     }
 }

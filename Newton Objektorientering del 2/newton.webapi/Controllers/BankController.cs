@@ -42,10 +42,27 @@ namespace newton.webapi.Controllers
             return Ok();
         }
 
+        [HttpGet]
+        [Route("api/customers")]
+        public IHttpActionResult GetAllCustomers()
+        {
+            var response = new GetAllCustomersResponse();
+            foreach (var customer in _customerRepository.GetAllCustomers()) {
+                response.Customers.Add(new CustomerDto() { 
+                    CustomerId = customer.CustomerId,
+                    FirstName = customer.FirstName, 
+                    LastName = customer.LastName, 
+                    SocialSecurityNumber = customer.SocialSecurityNumber, 
+                    Info = customer.Info });
+            }
+
+            return Ok(_customerRepository.GetAllCustomers());
+        }
+
 
         [HttpPost]
         [Route("api/customer")]
-        public IHttpActionResult CreateCustomer(CreateCustomerRequest request)
+        public IHttpActionResult CreateCustomer(CreateCustomersRequest request)
         {
             var customer = new Customer(request.FirstName, request.LastName, request.SocialSecurityNumber);
             _customerRepository.Create(customer);

@@ -43,7 +43,15 @@ namespace newton.repository.repos
 
         public IEnumerable<ICustomer> GetAllCustomers()
         {
-            throw new NotImplementedException();
+            var customers = new List<ICustomer>();
+
+            foreach (var entity in datacontext.Customers.ToList())
+            {
+                var customer = new domain.models.customer.Customer(entity.Id, entity.FirstName, entity.LastName, entity.SocialSecurityNumber, entity.Info);
+                customers.Add(customer);
+            }
+
+            return customers;
         }
 
         public IEnumerable<IInsurance> GetAllInsurances()

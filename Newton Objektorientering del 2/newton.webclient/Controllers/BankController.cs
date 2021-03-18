@@ -23,7 +23,7 @@ namespace newton.webclient.Controllers
         [HttpPost]
         public ActionResult CreateCustomer(CreateCustomerModel model)
         {
-            var createCustomerRequest = new CreateCustomerRequest
+            var createCustomerRequest = new CreateCustomersRequest
             {
                 FirstName = model.FirstName,
                 LastName = model.LastName,
