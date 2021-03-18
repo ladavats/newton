@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace newton.repository
+namespace newton.repository.dto
 {
-    public class LocalSqlDataStorage
+    public class CreateBankAccountDTO
     {
+        public int Balance { get; set; }
     }
 }
