@@ -1,9 +1,5 @@
 ﻿using newton.domain.models.bankaccount.interfaces;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace newton.repository.interfaces
 {
