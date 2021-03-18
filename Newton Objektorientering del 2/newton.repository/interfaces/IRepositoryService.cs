@@ -10,7 +10,7 @@ namespace newton.repository.interfaces
     //Vi börjar med detta repository som en hård referens.
     //Sedan kan vi göra detta till ett annat webAPI.
     //Men i nuläget så drar vi in referenserna.
-    public interface IRepository
+    public interface IRepositoryService
     {
         void CreateCustomer(CreateCustomerDTO customer);
         void CreateBankAccount(CreateBankAccountDTO bankaccount);

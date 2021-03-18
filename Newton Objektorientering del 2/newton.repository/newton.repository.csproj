@@ -47,7 +47,7 @@
     <Compile Include="dto\CreateBankAccountDTO.cs" />
     <Compile Include="dto\CreateCustomerDTO.cs" />
     <Compile Include="dto\CustomerDTO.cs" />
-    <Compile Include="interfaces\IRepository.cs" />
+    <Compile Include="interfaces\IRepositoryService.cs" />
     <Compile Include="classes\LocalSqlDataStorage.cs" />
     <Compile Include="newton.bank.designer.cs">
       <AutoGen>True</AutoGen>

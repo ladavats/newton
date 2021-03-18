@@ -15,12 +15,12 @@ namespace newton.webapi.Controllers
     public class BankAccountController : ApiController
     {
         private readonly IBankAccountService bankaccountservice;
-        private readonly IRepository bankrepository;
+        private readonly IRepositoryService bankrepositoryservice;
         public BankAccountController(IBankAccountService bankaccountservice,
-                                     IRepository bankrepository)
+                                     IRepositoryService bankrepositoryservice)
         {
             this.bankaccountservice = bankaccountservice;
-            this.bankrepository = bankrepository;
+            this.bankrepositoryservice = bankrepositoryservice;
         }
 
         [HttpGet]
@@ -43,20 +43,20 @@ namespace newton.webapi.Controllers
         public IHttpActionResult CreateBankAccount(CreateBankAccountRequest request)
         {
 
-
+            //Incorrect AutoSync specification for member 'Id'.
             var new_customer = new CreateCustomerDTO()
             {
                 FirstName = request.FirstName,
                 LastName = request.LastName,
                 SocialSecurityNumber = request.SocialSecurityNumber
             };
-            bankrepository.CreateCustomer(new_customer);
+            bankrepositoryservice.CreateCustomer(new_customer);
 
             var new_bankaccount = new CreateBankAccountDTO
             {
                 Balance = 100
             };
-            bankrepository.CreateBankAccount(new_bankaccount);
+            bankrepositoryservice.CreateBankAccount(new_bankaccount);
 
             return Ok();
         }

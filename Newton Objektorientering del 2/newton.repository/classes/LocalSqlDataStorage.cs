@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace newton.repository.classes
 {
-    public class LocalSqlDataStorage : IRepository
+    public class LocalSqlDataStorage : IRepositoryService
     {
         private readonly newton_bankDataContext datacontext;
         public LocalSqlDataStorage()
@@ -40,12 +40,12 @@ namespace newton.repository.classes
             datacontext.SubmitChanges();
         }
 
-        BankAccountDTO IRepository.GetBankAccount(int bankAccountId)
+        BankAccountDTO IRepositoryService.GetBankAccount(int bankAccountId)
         {
             return new BankAccountDTO();
         }
 
-        CustomerDTO IRepository.GetCustomer(int customerId)
+        CustomerDTO IRepositoryService.GetCustomer(int customerId)
         {
             throw new NotImplementedException();
         }
