@@ -15,6 +15,6 @@ namespace newton.dto
     }
     public class GetAllCustomersResponse
     {
-        public List<CustomerDto> Customers { get; set; } = new List<CustomerDto>();
+        public IList<CustomerDto> Customers { get; set; } = new List<CustomerDto>();
     }
 }

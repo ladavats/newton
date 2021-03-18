@@ -27,7 +27,7 @@ namespace newton.repository.repos
             throw new NotImplementedException();
         }
 
-        public IEnumerable<ICustomer> GetAllCustomers()
+        public IList<ICustomer> GetAllCustomers()
         {
             throw new NotImplementedException();
         }

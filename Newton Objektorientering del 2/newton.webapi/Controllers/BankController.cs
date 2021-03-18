@@ -56,7 +56,7 @@ namespace newton.webapi.Controllers
                     Info = customer.Info });
             }
 
-            return Ok(_customerRepository.GetAllCustomers());
+            return Ok(response);
         }
 
 
