@@ -31,21 +31,21 @@ namespace newton.webclient.Controllers
             return View();
         }
 
-        [HttpPost]
-        public ActionResult CreateBankAccount(CreateBankAccount bankaccount)
-        {
-            string jsonCreateBankAccountDTOasString = JsonConvert.SerializeObject(bankaccount.GetDTO());
-            var httpContent = new StringContent(jsonCreateBankAccountDTOasString, Encoding.UTF8, "application/json");
+        //[HttpPost]
+        //public ActionResult CreateBankAccount(CreateBankAccount bankaccount)
+        //{
+        //    string jsonCreateBankAccountDTOasString = JsonConvert.SerializeObject(bankaccount.GetDTO());
+        //    var httpContent = new StringContent(jsonCreateBankAccountDTOasString, Encoding.UTF8, "application/json");
 
-            using (HttpClient client = new HttpClient())
-            {
-                var response = client.PostAsync(new Uri("UrlToWebApiCreateBankAccount"), httpContent).Result;
-                if (response.StatusCode == System.Net.HttpStatusCode.OK)
-                    return View("BankAccountCreated");
+        //    using (HttpClient client = new HttpClient())
+        //    {
+        //        var response = client.PostAsync(new Uri("UrlToWebApiCreateBankAccount"), httpContent).Result;
+        //        if (response.StatusCode == System.Net.HttpStatusCode.OK)
+        //            return View("BankAccountCreated");
 
-            }
-            return View("BankAccountNotCreated");
-        }
+        //    }
+        //    return View("BankAccountNotCreated");
+        //}
     }
 }
     //public ActionResult GetPerson()

@@ -43,8 +43,8 @@ namespace newton.webapi.Controllers
 
 
         [HttpPost]
-        [Route("api/bankaccount")]
-        public IHttpActionResult CreateBankAccount(CreateBankAccountRequest request)
+        [Route("api/customer")]
+        public IHttpActionResult CreateCustomer(CreateCustomerRequest request)
         {
             //var bankaccount = bankaccountservice.CreateBankAccount(request.FirstName, request.LastName, request.SocialSecurityNumber);
 

@@ -1,12 +1,65 @@
-﻿@{
+﻿@model newton.webclient.Models.CreateCustomerModel
+@{
     ViewBag.Title = "Home Page";
 }
 
 <div class="jumbotron">
     <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
+    <p class="lead">This is the client. This is where all the GUI stuff will be for handeling the bank and its functions.</p>
     <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+    <ul>
+        <li>Test1</li>
+        <li>Test2</li>
+        <li>Test3</li>
+        <li>Test4</li>
+    </ul>
+
+    @using (Html.BeginForm("CreateCustomer", "Bank", FormMethod.Post))
+    {
+<table cellpadding="0" cellspacing="0">
+    <tr>
+        <th colspan="2" align="center">Person Details</th>
+    </tr>
+    <tr>
+        <td>Firstname: </td>
+        <td>
+            @Html.TextBoxFor(m => m.FirstName)
+        </td>
+    </tr>
+    <tr>
+        <td>Lastname: </td>
+        <td>
+            @Html.TextBoxFor(m => m.LastName)
+        </td>
+    </tr>
+    <tr>
+        <td>SocialSecurityNumber: </td>
+        <td>
+            @Html.TextBoxFor(m => m.SocialSecurityNumber)
+            <
+    <tr>
+        <td>Gender: </td>
+        <td>
+            @Html.DropDownListFor(m => m.Gender, new List<SelectListItem>
+           { new SelectListItem{Text="Male", Value="M"},
+             new SelectListItem{Text="Female", Value="F"}}, "Please select")
+        </td>
+    </tr>
+    <tr>
+        <td>City: </td>
+        <td>
+            @Html.TextBoxFor(m => m.City)
+        </td>
+    </tr>
+    <tr>
+        <td></td>
+        <td><input type="submit" value="Submit" /></td>
+    </tr>
+</table>
+    }
+
 </div>
+
 
 <div class="row">
     <div class="col-md-4">

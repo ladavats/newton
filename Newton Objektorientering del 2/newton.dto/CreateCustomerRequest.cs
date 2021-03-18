@@ -2,7 +2,7 @@
 
 namespace newton.dto
 {
-    public class CreateBankAccountRequest : ICreateBankAccount
+    public class CreateCustomerRequest : ICreateBankAccount
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
