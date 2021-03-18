@@ -126,6 +126,10 @@
       <Project>{1863366b-ad66-4fd4-809c-23a7d1c32dee}</Project>
       <Name>newton.dto</Name>
     </ProjectReference>
+    <ProjectReference Include="..\newton.repository\newton.repository.csproj">
+      <Project>{0e5776d1-026f-4003-a6f9-896dabec176a}</Project>
+      <Name>newton.repository</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

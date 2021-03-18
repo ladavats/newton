@@ -1,4 +1,6 @@
-﻿using newton.webapi.Models;
+﻿using newton.repository.classes;
+using newton.repository.interfaces;
+using newton.webapi.Models;
 using SimpleInjector;
 using SimpleInjector.Integration.WebApi;
 using SimpleInjector.Lifestyles;
@@ -33,6 +35,7 @@ namespace newton.webapi
             container.Options.DefaultScopedLifestyle = new AsyncScopedLifestyle();
             // Register your types, for instance using the scoped lifestyle:
             container.Register<IBankAccountService, NordeaBankAccountService>(Lifestyle.Scoped);
+            container.Register<IRepository, LocalSqlDataStorage> (Lifestyle.Scoped);
             // This is an extension method from the integration package.
             container.RegisterWebApiControllers(GlobalConfiguration.Configuration);
 

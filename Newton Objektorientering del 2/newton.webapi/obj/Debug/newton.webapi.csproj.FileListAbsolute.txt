@@ -77,3 +77,6 @@ C:\Users\Admin\Desktop\Newton\github\Newton Objektorientering del 2\newton.webap
 C:\Users\Admin\Desktop\Newton\github\Newton Objektorientering del 2\newton.webapi\bin\System.Threading.Tasks.Extensions.xml
 C:\Users\Admin\Desktop\Newton\github\Newton Objektorientering del 2\newton.webapi\bin\newton.dto.dll
 C:\Users\Admin\Desktop\Newton\github\Newton Objektorientering del 2\newton.webapi\bin\newton.dto.pdb
+C:\Users\Admin\Desktop\Newton\github\Newton Objektorientering del 2\newton.webapi\bin\newton.repository.dll
+C:\Users\Admin\Desktop\Newton\github\Newton Objektorientering del 2\newton.webapi\bin\newton.repository.pdb
+C:\Users\Admin\Desktop\Newton\github\Newton Objektorientering del 2\newton.webapi\bin\newton.repository.dll.config

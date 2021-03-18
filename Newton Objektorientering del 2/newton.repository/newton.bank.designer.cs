@@ -30,12 +30,15 @@ namespace newton.repository
 		
     #region Extensibility Method Definitions
     partial void OnCreated();
-    partial void InsertCustomer(Customer instance);
-    partial void UpdateCustomer(Customer instance);
-    partial void DeleteCustomer(Customer instance);
     partial void InsertCustomerBankAccount(CustomerBankAccount instance);
     partial void UpdateCustomerBankAccount(CustomerBankAccount instance);
     partial void DeleteCustomerBankAccount(CustomerBankAccount instance);
+    partial void InsertCustomer(Customer instance);
+    partial void UpdateCustomer(Customer instance);
+    partial void DeleteCustomer(Customer instance);
+    partial void InsertBankAccount(BankAccount instance);
+    partial void UpdateBankAccount(BankAccount instance);
+    partial void DeleteBankAccount(BankAccount instance);
     #endregion
 		
 		public newton_bankDataContext() : 
@@ -68,11 +71,11 @@ namespace newton.repository
 			OnCreated();
 		}
 		
-		public System.Data.Linq.Table<BankAccount> BankAccounts
+		public System.Data.Linq.Table<CustomerBankAccount> CustomerBankAccounts
 		{
 			get
 			{
-				return this.GetTable<BankAccount>();
+				return this.GetTable<CustomerBankAccount>();
 			}
 		}
 		
@@ -84,28 +87,45 @@ namespace newton.repository
 			}
 		}
 		
-		public System.Data.Linq.Table<CustomerBankAccount> CustomerBankAccounts
+		public System.Data.Linq.Table<BankAccount> BankAccounts
 		{
 			get
 			{
-				return this.GetTable<CustomerBankAccount>();
+				return this.GetTable<BankAccount>();
 			}
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.BankAccount")]
-	public partial class BankAccount
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.CustomerBankAccount")]
+	public partial class CustomerBankAccount : INotifyPropertyChanging, INotifyPropertyChanged
 	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
 		private int _Id;
 		
-		private int _Balance;
+		private int _CustomerId;
 		
-		public BankAccount()
+		private int _BancAccountId;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnCustomerIdChanging(int value);
+    partial void OnCustomerIdChanged();
+    partial void OnBancAccountIdChanging(int value);
+    partial void OnBancAccountIdChanged();
+    #endregion
+		
+		public CustomerBankAccount()
 		{
+			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", DbType="Int NOT NULL")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", DbType="Int NOT NULL", IsPrimaryKey=true)]
 		public int Id
 		{
 			get
@@ -116,24 +136,72 @@ namespace newton.repository
 			{
 				if ((this._Id != value))
 				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
 					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Balance", DbType="Int NOT NULL")]
-		public int Balance
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CustomerId", DbType="Int NOT NULL")]
+		public int CustomerId
 		{
 			get
 			{
-				return this._Balance;
+				return this._CustomerId;
 			}
 			set
 			{
-				if ((this._Balance != value))
+				if ((this._CustomerId != value))
 				{
-					this._Balance = value;
+					this.OnCustomerIdChanging(value);
+					this.SendPropertyChanging();
+					this._CustomerId = value;
+					this.SendPropertyChanged("CustomerId");
+					this.OnCustomerIdChanged();
 				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BancAccountId", DbType="Int NOT NULL")]
+		public int BancAccountId
+		{
+			get
+			{
+				return this._BancAccountId;
+			}
+			set
+			{
+				if ((this._BancAccountId != value))
+				{
+					this.OnBancAccountIdChanging(value);
+					this.SendPropertyChanging();
+					this._BancAccountId = value;
+					this.SendPropertyChanged("BancAccountId");
+					this.OnBancAccountIdChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}
@@ -175,7 +243,7 @@ namespace newton.repository
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
 		public int Id
 		{
 			get
@@ -296,17 +364,15 @@ namespace newton.repository
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.CustomerBankAccount")]
-	public partial class CustomerBankAccount : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.BankAccount")]
+	public partial class BankAccount : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
 		private int _Id;
 		
-		private int _CustomerId;
-		
-		private int _BancAccountId;
+		private int _Balance;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -314,18 +380,16 @@ namespace newton.repository
     partial void OnCreated();
     partial void OnIdChanging(int value);
     partial void OnIdChanged();
-    partial void OnCustomerIdChanging(int value);
-    partial void OnCustomerIdChanged();
-    partial void OnBancAccountIdChanging(int value);
-    partial void OnBancAccountIdChanged();
+    partial void OnBalanceChanging(int value);
+    partial void OnBalanceChanged();
     #endregion
 		
-		public CustomerBankAccount()
+		public BankAccount()
 		{
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
 		public int Id
 		{
 			get
@@ -345,42 +409,22 @@ namespace newton.repository
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CustomerId", DbType="Int NOT NULL")]
-		public int CustomerId
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Balance", DbType="Int NOT NULL")]
+		public int Balance
 		{
 			get
 			{
-				return this._CustomerId;
+				return this._Balance;
 			}
 			set
 			{
-				if ((this._CustomerId != value))
+				if ((this._Balance != value))
 				{
-					this.OnCustomerIdChanging(value);
+					this.OnBalanceChanging(value);
 					this.SendPropertyChanging();
-					this._CustomerId = value;
-					this.SendPropertyChanged("CustomerId");
-					this.OnCustomerIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BancAccountId", DbType="Int NOT NULL")]
-		public int BancAccountId
-		{
-			get
-			{
-				return this._BancAccountId;
-			}
-			set
-			{
-				if ((this._BancAccountId != value))
-				{
-					this.OnBancAccountIdChanging(value);
-					this.SendPropertyChanging();
-					this._BancAccountId = value;
-					this.SendPropertyChanged("BancAccountId");
-					this.OnBancAccountIdChanged();
+					this._Balance = value;
+					this.SendPropertyChanged("Balance");
+					this.OnBalanceChanged();
 				}
 			}
 		}

@@ -1,4 +1,6 @@
 ﻿using newton.dto;
+using newton.repository.dto;
+using newton.repository.interfaces;
 using newton.webapi.Models;
 using newton.webapi.Models.dto;
 using System;
@@ -13,10 +15,12 @@ namespace newton.webapi.Controllers
     public class BankAccountController : ApiController
     {
         private readonly IBankAccountService bankaccountservice;
-        
-        public BankAccountController(IBankAccountService bankaccountservice)
+        private readonly IRepository bankrepository;
+        public BankAccountController(IBankAccountService bankaccountservice,
+                                     IRepository bankrepository)
         {
             this.bankaccountservice = bankaccountservice;
+            this.bankrepository = bankrepository;
         }
 
         [HttpGet]
@@ -38,12 +42,23 @@ namespace newton.webapi.Controllers
         [Route("api/bankaccount")]
         public IHttpActionResult CreateBankAccount(CreateBankAccountRequest request)
         {
-            var createdaccount = bankaccountservice.CreateBankAccount(request.FirstName, request.LastName, request.SocialSecurityNumber);
-            //repositoryservice.Create(createdaccount);
+
+
+            var new_customer = new CreateCustomerDTO()
+            {
+                FirstName = request.FirstName,
+                LastName = request.LastName,
+                SocialSecurityNumber = request.SocialSecurityNumber
+            };
+            bankrepository.CreateCustomer(new_customer);
+
+            var new_bankaccount = new CreateBankAccountDTO
+            {
+                Balance = 100
+            };
+            bankrepository.CreateBankAccount(new_bankaccount);
+
             return Ok();
-
         }
-
-
     }
 }
