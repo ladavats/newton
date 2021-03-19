@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace newton.domain.models.bankaccount
+namespace newton.domain.models.bankaccount.services
 {
     public class NordeaBankAccountService : IBankAccountService
     {
