@@ -53,6 +53,7 @@ C:\Users\Admin\Desktop\Newton\github\Newton Objektorientering del 2\newton.webcl
 C:\Users\Admin\Desktop\Newton\github\Newton Objektorientering del 2\newton.webclient\bin\Antlr3.Runtime.dll
 C:\Users\Admin\Desktop\Newton\github\Newton Objektorientering del 2\newton.webclient\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 C:\Users\Admin\Desktop\Newton\github\Newton Objektorientering del 2\newton.webclient\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Admin\Desktop\Newton\github\Newton Objektorientering del 2\newton.webclient\bin\newton.dto.dll
 C:\Users\Admin\Desktop\Newton\github\Newton Objektorientering del 2\newton.webclient\bin\Newtonsoft.Json.dll
 C:\Users\Admin\Desktop\Newton\github\Newton Objektorientering del 2\newton.webclient\bin\System.Web.Helpers.dll
 C:\Users\Admin\Desktop\Newton\github\Newton Objektorientering del 2\newton.webclient\bin\System.Web.Mvc.dll
@@ -62,6 +63,7 @@ C:\Users\Admin\Desktop\Newton\github\Newton Objektorientering del 2\newton.webcl
 C:\Users\Admin\Desktop\Newton\github\Newton Objektorientering del 2\newton.webclient\bin\System.Web.WebPages.dll
 C:\Users\Admin\Desktop\Newton\github\Newton Objektorientering del 2\newton.webclient\bin\System.Web.WebPages.Razor.dll
 C:\Users\Admin\Desktop\Newton\github\Newton Objektorientering del 2\newton.webclient\bin\WebGrease.dll
+C:\Users\Admin\Desktop\Newton\github\Newton Objektorientering del 2\newton.webclient\bin\newton.dto.pdb
 C:\Users\Admin\Desktop\Newton\github\Newton Objektorientering del 2\newton.webclient\bin\System.Web.Helpers.xml
 C:\Users\Admin\Desktop\Newton\github\Newton Objektorientering del 2\newton.webclient\bin\System.Web.Mvc.xml
 C:\Users\Admin\Desktop\Newton\github\Newton Objektorientering del 2\newton.webclient\bin\System.Web.Optimization.xml
@@ -77,5 +79,3 @@ C:\Users\Admin\Desktop\Newton\github\Newton Objektorientering del 2\newton.webcl
 C:\Users\Admin\Desktop\Newton\github\Newton Objektorientering del 2\newton.webclient\obj\Debug\newton.webclient.csproj.CopyComplete
 C:\Users\Admin\Desktop\Newton\github\Newton Objektorientering del 2\newton.webclient\obj\Debug\newton.webclient.dll
 C:\Users\Admin\Desktop\Newton\github\Newton Objektorientering del 2\newton.webclient\obj\Debug\newton.webclient.pdb
-C:\Users\Admin\Desktop\Newton\github\Newton Objektorientering del 2\newton.webclient\bin\newton.dto.dll
-C:\Users\Admin\Desktop\Newton\github\Newton Objektorientering del 2\newton.webclient\bin\newton.dto.pdb

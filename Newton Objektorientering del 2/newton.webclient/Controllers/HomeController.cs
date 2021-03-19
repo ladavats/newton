@@ -22,7 +22,7 @@ namespace newton.webclient.Controllers
                 if (response != null)
                 {
                     var jsonString = response.Content.ReadAsStringAsync().Result;
-                    var customerResponse = JsonConvert.DeserializeObject<GetAllCustomersResponse>(jsonString);
+                    var customerResponse = JsonConvert.DeserializeObject<GetAllCustomersResponseDto>(jsonString);
                     ViewBag.Customers = customerResponse.Customers;
                 }
             }

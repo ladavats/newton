@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Text;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 
@@ -14,7 +15,7 @@ namespace newton.webclient.Controllers
     public class BankController : Controller
     {
         private readonly string createCustomerUrl = "https://localhost:44379/api/customer";
-        
+
         public ActionResult Index()
         {
             return View();
@@ -23,7 +24,7 @@ namespace newton.webclient.Controllers
         [HttpPost]
         public ActionResult CreateCustomer(CreateCustomerModel model)
         {
-            var createCustomerRequest = new CreateCustomersRequest
+            var createCustomerRequest = new CreateCustomerRequestDto
             {
                 FirstName = model.FirstName,
                 LastName = model.LastName,
@@ -33,6 +34,11 @@ namespace newton.webclient.Controllers
             string jsonCreateCustomer = JsonConvert.SerializeObject(createCustomerRequest);
             var httpContent = new StringContent(jsonCreateCustomer, Encoding.UTF8, "application/json");
 
+            //Task, Threading example to understand Async / Syncront.
+            //ÖVA PÅ DETTA!
+            //System.Threading.Thread!
+            Task.Run(() => WaitOneSecond()).ContinueWith(task => WaitFiveSeconds());
+            
             using (HttpClient client = new HttpClient())
             {
                 var response = client.PostAsync(new Uri(createCustomerUrl), httpContent).Result;
@@ -40,8 +46,20 @@ namespace newton.webclient.Controllers
                     return View("Error");
             }
             
-            
             return View("~/Views/Customer/CustomerCreated.cshtml");
         }
+
+        static void WaitOneSecond()
+        {
+            System.Threading.Thread.Sleep(1000);
+        }
+
+        static void WaitFiveSeconds()
+        {
+            System.Threading.Thread.Sleep(5000);
+        }
     }
+
+
+    
 }

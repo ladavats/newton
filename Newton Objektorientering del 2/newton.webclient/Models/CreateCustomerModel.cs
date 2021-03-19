@@ -12,5 +12,7 @@ namespace newton.webclient.Models
         public string SocialSecurityNumber { get; set; }
         public string Gender { get; set; }
         public string City { get; set; }
+
+        public bool WasCheckBoxSelected { get; set; }
     }
 }

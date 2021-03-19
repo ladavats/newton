@@ -13,7 +13,7 @@ namespace newton.dto
         public string Info { get; set; }
 
     }
-    public class GetAllCustomersResponse
+    public class GetAllCustomersResponseDto
     {
         public IList<CustomerDto> Customers { get; set; } = new List<CustomerDto>();
     }

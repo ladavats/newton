@@ -46,7 +46,7 @@ namespace newton.webapi.Controllers
         [Route("api/customers")]
         public IHttpActionResult GetAllCustomers()
         {
-            var response = new GetAllCustomersResponse();
+            var response = new GetAllCustomersResponseDto();
             foreach (var customer in _customerRepository.GetAllCustomers()) {
                 response.Customers.Add(new CustomerDto() { 
                     CustomerId = customer.CustomerId,
@@ -62,7 +62,7 @@ namespace newton.webapi.Controllers
 
         [HttpPost]
         [Route("api/customer")]
-        public IHttpActionResult CreateCustomer(CreateCustomersRequest request)
+        public IHttpActionResult CreateCustomer(CreateCustomerRequestDto request)
         {
             var customer = new Customer(request.FirstName, request.LastName, request.SocialSecurityNumber);
             _customerRepository.Create(customer);
