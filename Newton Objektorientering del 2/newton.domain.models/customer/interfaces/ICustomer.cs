@@ -14,6 +14,5 @@ namespace newton.domain.models.customer.interfaces
         string SocialSecurityNumber { get; }
 
         string Info { get; }
-
     }
 }

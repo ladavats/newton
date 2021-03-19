@@ -7,17 +7,24 @@ using System.Threading.Tasks;
 
 namespace newton.domain.models.bankaccount
 {
-    public class BankAccount : IBankAccount
+    public class HighYearlyRateBankAccount : IBankAccount
     {
+        private const float VeryHighYearlyInterestRate = 1.106f;
         private int accountId { get; set; }
         private float balance { get; set; }
         public int AccountId => accountId;
         public float Balance => balance;
 
-        public BankAccount(int accountId, float balance)
+        public HighYearlyRateBankAccount(int accountId, float balance)
         {
             this.accountId = accountId;
             this.balance = balance;
+        }
+
+        public void CalculateYearlyInterestRate()
+        {
+
+            this.balance += balance * VeryHighYearlyInterestRate;
         }
     }
 }

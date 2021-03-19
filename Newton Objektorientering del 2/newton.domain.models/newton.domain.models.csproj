@@ -41,9 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="bankaccount\BankAccount.cs" />
+    <Compile Include="bankaccount\HighYearlyRateBankAccount.cs" />
+    <Compile Include="bankaccount\LowYearlyRateBankAccount.cs" />
     <Compile Include="bankaccount\interfaces\IBankAccount.cs" />
-    <Compile Include="customer\Customer.cs" />
+    <Compile Include="customer\PrivateCustomer.cs" />
     <Compile Include="customer\interfaces\ICustomer.cs" />
     <Compile Include="insurance\Insurance.cs" />
     <Compile Include="insurance\interfaces\IInsurance.cs" />

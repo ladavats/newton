@@ -10,5 +10,7 @@ namespace newton.domain.models.bankaccount.interfaces
     {
         int AccountId { get; }
         float Balance { get; }
+
+        void CalculateYearlyInterestRate();
     }
 }

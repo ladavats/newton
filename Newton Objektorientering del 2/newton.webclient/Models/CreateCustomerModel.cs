@@ -13,6 +13,7 @@ namespace newton.webclient.Models
         public string Gender { get; set; }
         public string City { get; set; }
 
+        public float YearlySalary { get; set; }
         public bool WasCheckBoxSelected { get; set; }
     }
 }

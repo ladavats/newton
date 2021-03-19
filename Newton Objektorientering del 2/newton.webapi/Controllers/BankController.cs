@@ -64,7 +64,7 @@ namespace newton.webapi.Controllers
         [Route("api/customer")]
         public IHttpActionResult CreateCustomer(CreateCustomerRequestDto request)
         {
-            var customer = new Customer(request.FirstName, request.LastName, request.SocialSecurityNumber);
+            var customer = new PrivateCustomer(request.FirstName, request.LastName, request.SocialSecurityNumber, request.YearlySalary);
             _customerRepository.Create(customer);
 
             return Ok();

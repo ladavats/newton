@@ -28,7 +28,8 @@ namespace newton.webclient.Controllers
             {
                 FirstName = model.FirstName,
                 LastName = model.LastName,
-                SocialSecurityNumber = model.SocialSecurityNumber
+                SocialSecurityNumber = model.SocialSecurityNumber,
+                YearlySalary = model.YearlySalary
             };
 
             string jsonCreateCustomer = JsonConvert.SerializeObject(createCustomerRequest);
