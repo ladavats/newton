@@ -1,6 +1,5 @@
 ﻿using newton.repository.repos;
 using newton.repository.interfaces;
-using newton.webapi.Models;
 using SimpleInjector;
 using SimpleInjector.Integration.WebApi;
 using SimpleInjector.Lifestyles;
@@ -8,6 +7,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
+using newton.domain.models.bankaccount;
+using newton.domain.models.bankaccount.interfaces;
 
 namespace newton.webapi
 {

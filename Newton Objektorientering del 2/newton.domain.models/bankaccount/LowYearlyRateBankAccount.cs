@@ -10,6 +10,7 @@ namespace newton.domain.models.bankaccount
     public class LowYearlyRateBankAccount : IBankAccount
     {
         private const float YearlyInterestRate = 1.006f;
+        private const float WithdrawFee = 10;
         private int accountId { get; set; }
         private float balance { get; set; }
         public int AccountId => accountId;
@@ -25,6 +26,17 @@ namespace newton.domain.models.bankaccount
         {
 
             this.balance += balance * YearlyInterestRate;
+        }
+
+        public void Withdraw(int amount)
+        {
+            this.balance -= WithdrawFee;
+            this.balance -= amount;
+        }
+
+        public void Deposit(int amount)
+        {
+            this.balance += amount;
         }
     }
 }

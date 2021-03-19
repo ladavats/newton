@@ -26,5 +26,15 @@ namespace newton.domain.models.bankaccount
 
             this.balance += balance * VeryHighYearlyInterestRate;
         }
+
+        public void Withdraw(int amount)
+        {
+            this.balance -= amount;
+        }
+
+        public void Deposit(int amount)
+        {
+            this.balance += amount;
+        }
     }
 }

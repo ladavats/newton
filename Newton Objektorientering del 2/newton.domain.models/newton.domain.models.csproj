@@ -42,8 +42,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="bankaccount\HighYearlyRateBankAccount.cs" />
+    <Compile Include="bankaccount\interfaces\IBankAccountService.cs" />
     <Compile Include="bankaccount\LowYearlyRateBankAccount.cs" />
     <Compile Include="bankaccount\interfaces\IBankAccount.cs" />
+    <Compile Include="bankaccount\NordeaBankAccountService.cs" />
     <Compile Include="customer\CustomerFactory.cs" />
     <Compile Include="customer\HighPrioratizedPrivateCustomer.cs" />
     <Compile Include="customer\PrivateCustomer.cs" />
@@ -52,6 +54,9 @@
     <Compile Include="insurance\interfaces\IInsurance.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="bankaccount\services\" />
+    <Folder Include="customer\services\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

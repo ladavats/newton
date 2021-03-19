@@ -1,4 +1,5 @@
 ﻿using newton.domain.models.bankaccount.interfaces;
+using newton.domain.models.customer;
 using newton.domain.models.customer.interfaces;
 using newton.domain.models.insurance.interfaces;
 using newton.repository.interfaces;
@@ -47,8 +48,9 @@ namespace newton.repository.repos
 
             foreach (var entity in datacontext.Customers.ToList())
             {
-                var customer = new domain.models.customer.Customer(entity.Id, entity.FirstName, entity.LastName, entity.SocialSecurityNumber, entity.Info);
-                customers.Add(customer);
+                //var customer = CustomerFactory.CreateCustomer(entity.)
+                //var customer = new domain.models.customer.Customer(entity.Id, entity.FirstName, entity.LastName, entity.SocialSecurityNumber, entity.Info);
+                //customers.Add(customer);
             }
 
             return customers;

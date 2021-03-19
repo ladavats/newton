@@ -1,12 +1,8 @@
-﻿using newton.domain.models.customer;
+﻿using newton.domain.models.bankaccount.interfaces;
+using newton.domain.models.customer;
 using newton.domain.models.customer.interfaces;
 using newton.dto;
 using newton.repository.interfaces;
-using newton.webapi.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
 using System.Web.Http;
 
 namespace newton.webapi.Controllers

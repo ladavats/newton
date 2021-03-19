@@ -1,4 +1,3 @@
-using newton.webapi.Models;
 using SimpleInjector;
 using SimpleInjector.Integration.WebApi;
 using SimpleInjector.Lifestyles;
