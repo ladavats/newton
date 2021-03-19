@@ -25,7 +25,8 @@ namespace newton.repository.repos
                 FirstName = customer.FirstName,
                 LastName = customer.LastName,
                 SocialSecurityNumber = customer.SocialSecurityNumber,
-                Info = "Customer is also a programmer"
+                Info = "Customer is also a programmer",
+                YearlySalary = customer.YearlySalary
             };
 
             datacontext.Customers.InsertOnSubmit(newCustomer);
@@ -45,14 +46,14 @@ namespace newton.repository.repos
         public IList<ICustomer> GetAllCustomers()
         {
             var customers = new List<ICustomer>();
-
             foreach (var entity in datacontext.Customers.ToList())
             {
-                //var customer = CustomerFactory.CreateCustomer(entity.)
-                //var customer = new domain.models.customer.Customer(entity.Id, entity.FirstName, entity.LastName, entity.SocialSecurityNumber, entity.Info);
-                //customers.Add(customer);
+                ICustomer customer = CustomerFactory.CreateCustomer(entity.FirstName, 
+                                                                    entity.LastName, 
+                                                                    entity.SocialSecurityNumber, 
+                                                                    (float)entity.YearlySalary);
+                customers.Add(customer);
             }
-
             return customers;
         }
 

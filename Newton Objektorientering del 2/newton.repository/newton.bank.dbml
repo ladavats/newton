@@ -28,6 +28,7 @@
       <Column Name="LastName" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
       <Column Name="SocialSecurityNumber" Type="System.String" DbType="NChar(12) NOT NULL" CanBeNull="false" />
       <Column Name="Info" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="YearlySalary" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
 </Database>

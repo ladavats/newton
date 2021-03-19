@@ -25,8 +25,6 @@ namespace newton.domain.models.customer
         public string Info => info;
         public float YearlySalary => yearlySalary;
 
-        public float YearlySalary2 { get; set; }
-
         public HighPrioratizedPrivateCustomer(string firstName, string lastName, string socialSecurityNumber, float yearlySalary)
         {
             this.firstName = firstName;

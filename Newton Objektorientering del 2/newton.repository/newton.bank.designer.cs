@@ -453,6 +453,8 @@ namespace newton.repository
 		
 		private string _Info;
 		
+		private double _YearlySalary;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -467,6 +469,8 @@ namespace newton.repository
     partial void OnSocialSecurityNumberChanged();
     partial void OnInfoChanging(string value);
     partial void OnInfoChanged();
+    partial void OnYearlySalaryChanging(double value);
+    partial void OnYearlySalaryChanged();
     #endregion
 		
 		public Customer()
@@ -570,6 +574,26 @@ namespace newton.repository
 					this._Info = value;
 					this.SendPropertyChanged("Info");
 					this.OnInfoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_YearlySalary", DbType="Float NOT NULL")]
+		public double YearlySalary
+		{
+			get
+			{
+				return this._YearlySalary;
+			}
+			set
+			{
+				if ((this._YearlySalary != value))
+				{
+					this.OnYearlySalaryChanging(value);
+					this.SendPropertyChanging();
+					this._YearlySalary = value;
+					this.SendPropertyChanged("YearlySalary");
+					this.OnYearlySalaryChanged();
 				}
 			}
 		}

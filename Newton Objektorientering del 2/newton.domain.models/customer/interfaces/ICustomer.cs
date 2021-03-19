@@ -12,7 +12,7 @@ namespace newton.domain.models.customer.interfaces
         string FirstName { get; }
         string LastName { get; }
         string SocialSecurityNumber { get; }
-
         string Info { get; }
+        float YearlySalary { get; }
     }
 }
