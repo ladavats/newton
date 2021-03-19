@@ -43,7 +43,7 @@ namespace newton.repository.repos
             throw new NotImplementedException();
         }
 
-        public IList<ICustomer> GetAllCustomers()
+        public IEnumerable<ICustomer> GetAllCustomers()
         {
             var customers = new List<ICustomer>();
             foreach (var entity in datacontext.Customers.ToList())
@@ -51,7 +51,7 @@ namespace newton.repository.repos
                 ICustomer customer = CustomerFactory.CreateCustomer(entity.FirstName, 
                                                                     entity.LastName, 
                                                                     entity.SocialSecurityNumber, 
-                                                                    (float)entity.YearlySalary);
+                                                                    ((float)entity.YearlySalary));
                 customers.Add(customer);
             }
             return customers;

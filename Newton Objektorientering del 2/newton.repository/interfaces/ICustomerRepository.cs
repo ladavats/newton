@@ -7,7 +7,7 @@ namespace newton.repository.interfaces
     {
         void Create(ICustomer customer);
         ICustomer GetById(int customerId);
-        IList<ICustomer> GetAllCustomers();
+        IEnumerable<ICustomer> GetAllCustomers();
         ICustomer Update(ICustomer customer);
         void Delete(int customerId);
     }

@@ -23,7 +23,23 @@ namespace newton.webclient.Controllers
                 {
                     var jsonString = response.Content.ReadAsStringAsync().Result;
                     var customerResponse = JsonConvert.DeserializeObject<GetAllCustomersResponseDto>(jsonString);
-                    ViewBag.Customers = customerResponse.Customers;
+
+                    var customers = new List<CustomerListModel>();
+                    foreach (var customer in customerResponse.Customers)
+                    {
+                        var customerListModel = new CustomerListModel
+                        {
+                            FirstName = customer.FirstName,
+                            LastName = customer.LastName,
+                            SocialSecurityNumber = customer.SocialSecurityNumber,
+                            YearlySalary = customer.YearlySalary,
+                            Info = customer.Info,
+                            City = "No city in database"
+
+                        };
+                        customers.Add(customerListModel);
+                    }
+                    ViewBag.Customers = customers;
                 }
             }
 

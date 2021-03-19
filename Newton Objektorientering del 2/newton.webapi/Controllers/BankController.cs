@@ -50,7 +50,8 @@ namespace newton.webapi.Controllers
                     FirstName = customer.FirstName, 
                     LastName = customer.LastName, 
                     SocialSecurityNumber = customer.SocialSecurityNumber, 
-                    Info = customer.Info });
+                    Info = customer.Info,
+                    YearlySalary = customer.YearlySalary});
             }
 
             return Ok(response);

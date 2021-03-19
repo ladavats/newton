@@ -54,13 +54,14 @@
         <td><input type="submit" value="Submit" /></td>
     </tr>
     <tr><td><b>Existing customers:</b></td></tr>
-    @foreach(var customer in (List<newton.dto.CustomerDto>)ViewBag.Customers) {
-    <tr>
-        <td>@customer.FirstName</td>
-        <td>@customer.LastName</td>
-        <td>@customer.SocialSecurityNumber</td>
-        <td>&nbsp;&nbsp;&nbsp;&nbsp;@customer.Info</td>
-    </tr>    
+    @foreach(var customer in (List<newton.webclient.Models.CustomerListModel>)ViewBag.Customers) {
+<tr>
+    <td>@customer.FirstName</td>
+    <td>@customer.LastName</td>
+    <td>@customer.SocialSecurityNumber</td>
+    <td>&nbsp;&nbsp;&nbsp;&nbsp;@customer.Info</td>
+    <td>&nbsp;&nbsp;&nbsp;&nbsp;@customer.YearlySalary</td>
+</tr>    
     }
 </table>
     }
