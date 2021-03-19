@@ -66,6 +66,7 @@ namespace newton.webapi.Controllers
                                                                 request.SocialSecurityNumber, 
                                                                 request.YearlySalary);
 
+
             _customerRepository.Create(customer);
 
             return Ok();
