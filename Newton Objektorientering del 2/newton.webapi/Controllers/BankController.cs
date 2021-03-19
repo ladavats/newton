@@ -1,4 +1,5 @@
 ﻿using newton.domain.models.customer;
+using newton.domain.models.customer.interfaces;
 using newton.dto;
 using newton.repository.interfaces;
 using newton.webapi.Models;
@@ -64,7 +65,11 @@ namespace newton.webapi.Controllers
         [Route("api/customer")]
         public IHttpActionResult CreateCustomer(CreateCustomerRequestDto request)
         {
-            var customer = new PrivateCustomer(request.FirstName, request.LastName, request.SocialSecurityNumber, request.YearlySalary);
+            ICustomer customer = CustomerFactory.CreateCustomer(request.FirstName, 
+                                                                request.LastName, 
+                                                                request.SocialSecurityNumber, 
+                                                                request.YearlySalary);
+
             _customerRepository.Create(customer);
 
             return Ok();

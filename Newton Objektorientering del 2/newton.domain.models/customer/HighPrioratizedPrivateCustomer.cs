@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace newton.domain.models.customer
 {
-    public class PrivateCustomer : ICustomer
+    public class HighPrioratizedPrivateCustomer : ICustomer
     {
         private int customerId { get; set; }
         private string firstName { get; set; }
@@ -25,7 +25,9 @@ namespace newton.domain.models.customer
         public string Info => info;
         public float YearlySalary => yearlySalary;
 
-        public PrivateCustomer(string firstName, string lastName, string socialSecurityNumber, float yearlySalary)
+        public float YearlySalary2 { get; set; }
+
+        public HighPrioratizedPrivateCustomer(string firstName, string lastName, string socialSecurityNumber, float yearlySalary)
         {
             this.firstName = firstName;
             this.lastName = lastName;
@@ -33,7 +35,7 @@ namespace newton.domain.models.customer
             this.yearlySalary = yearlySalary;
         }
 
-        public PrivateCustomer(int customerId, string firstName, string lastName, string socialSecurityNumber, string info, float yearlySalary)
+        public HighPrioratizedPrivateCustomer(int customerId, string firstName, string lastName, string socialSecurityNumber, string info, float yearlySalary)
         {
             this.customerId = customerId;
             this.firstName = firstName;

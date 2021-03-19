@@ -44,6 +44,8 @@
     <Compile Include="bankaccount\HighYearlyRateBankAccount.cs" />
     <Compile Include="bankaccount\LowYearlyRateBankAccount.cs" />
     <Compile Include="bankaccount\interfaces\IBankAccount.cs" />
+    <Compile Include="customer\CustomerFactory.cs" />
+    <Compile Include="customer\HighPrioratizedPrivateCustomer.cs" />
     <Compile Include="customer\PrivateCustomer.cs" />
     <Compile Include="customer\interfaces\ICustomer.cs" />
     <Compile Include="insurance\Insurance.cs" />
