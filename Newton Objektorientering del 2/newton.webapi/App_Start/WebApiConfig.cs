@@ -33,9 +33,9 @@ namespace newton.webapi
             container.Options.DefaultScopedLifestyle = new AsyncScopedLifestyle();
             // Register your types, for instance using the scoped lifestyle:
             container.Register<IBankAccountService, NordeaBankAccountService>(Lifestyle.Scoped);
-            container.Register<ICustomerRepository, LocalSqlDataStorage> (Lifestyle.Scoped);
-            container.Register<IInsuranceRepository, LocalSqlDataStorage>(Lifestyle.Scoped);
-            container.Register<IBankAccountRepository, LocalSqlDataStorage>(Lifestyle.Scoped);
+            container.Register<ICustomerRepository, AzureSqlDataStorage> (Lifestyle.Scoped);
+            container.Register<IInsuranceRepository, AzureSqlDataStorage>(Lifestyle.Scoped);
+            container.Register<IBankAccountRepository, AzureSqlDataStorage>(Lifestyle.Scoped);
             // This is an extension method from the integration package.
             container.RegisterWebApiControllers(GlobalConfiguration.Configuration);
 

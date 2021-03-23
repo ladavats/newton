@@ -65,7 +65,8 @@ namespace newton.webapi.Controllers
             ICustomer customer = CustomerFactory.CreateCustomer(request.FirstName, 
                                                                 request.LastName, 
                                                                 request.SocialSecurityNumber, 
-                                                                request.YearlySalary);
+                                                                request.YearlySalary,
+                                                                request.Info);
 
 
             _customerRepository.Create(customer);

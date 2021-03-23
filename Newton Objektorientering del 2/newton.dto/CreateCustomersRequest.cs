@@ -8,6 +8,7 @@ namespace newton.dto
         public string LastName { get; set; }
         public string SocialSecurityNumber { get; set; }
         public float YearlySalary { get; set; }
+        public string Info { get; set; }
     }
 
     public interface ICreateBankAccount

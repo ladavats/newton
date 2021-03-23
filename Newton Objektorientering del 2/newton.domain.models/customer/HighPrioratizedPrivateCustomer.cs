@@ -25,11 +25,12 @@ namespace newton.domain.models.customer
         public string Info => info;
         public float YearlySalary => yearlySalary;
 
-        public HighPrioratizedPrivateCustomer(string firstName, string lastName, string socialSecurityNumber, float yearlySalary)
+        public HighPrioratizedPrivateCustomer(string firstName, string lastName, string socialSecurityNumber, string info, float yearlySalary)
         {
             this.firstName = firstName;
             this.lastName = lastName;
             this.socialSecurityNumber = socialSecurityNumber;
+            this.info = info;
             this.yearlySalary = yearlySalary;
         }
 

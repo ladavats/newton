@@ -1,0 +1,6 @@
+C:\Users\Admin\Desktop\Newton\github\Newton Objektorientering del 2\newton.domain.models\bin\Release\newton.domain.models.dll
+C:\Users\Admin\Desktop\Newton\github\Newton Objektorientering del 2\newton.domain.models\bin\Release\newton.domain.models.pdb
+C:\Users\Admin\Desktop\Newton\github\Newton Objektorientering del 2\newton.domain.models\obj\Release\newton.domain.models.csprojAssemblyReference.cache
+C:\Users\Admin\Desktop\Newton\github\Newton Objektorientering del 2\newton.domain.models\obj\Release\newton.domain.models.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\Newton\github\Newton Objektorientering del 2\newton.domain.models\obj\Release\newton.domain.models.dll
+C:\Users\Admin\Desktop\Newton\github\Newton Objektorientering del 2\newton.domain.models\obj\Release\newton.domain.models.pdb

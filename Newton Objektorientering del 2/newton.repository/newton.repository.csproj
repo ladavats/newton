@@ -42,7 +42,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="repos\AzureBlogStorageRepository.cs" />
+    <Compile Include="azurebankdatabase.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>azurebankdatabase.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="repos\AzureSqlDataStorage.cs" />
     <Compile Include="interfaces\ICustomerRepository.cs" />
     <Compile Include="interfaces\IInsuranceRepository.cs" />
     <Compile Include="interfaces\IBankAccountRepository.cs" />
@@ -62,6 +67,14 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="azurebankdatabase.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>azurebankdatabase.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="azurebankdatabase.dbml.layout">
+      <DependentUpon>azurebankdatabase.dbml</DependentUpon>
+    </None>
     <None Include="newton.bank.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>newton.bank.designer.cs</LastGenOutput>

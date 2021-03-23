@@ -51,7 +51,8 @@ namespace newton.repository.repos
                 ICustomer customer = CustomerFactory.CreateCustomer(entity.FirstName, 
                                                                     entity.LastName, 
                                                                     entity.SocialSecurityNumber, 
-                                                                    ((float)entity.YearlySalary));
+                                                                    ((float)entity.YearlySalary),
+                                                                    entity.Info);
                 customers.Add(customer);
             }
             return customers;
