@@ -16,7 +16,7 @@ namespace newton.repository.repos
         private readonly newton_bankDataContext datacontext;
         public LocalSqlDataStorage()
         {
-            datacontext = new newton_bankDataContext();
+            datacontext = new newton_bankDataContext("Data Source=newtonsqlserver.database.windows.net;Initial Catalog=bankdatabase;User ID=newtondbuser;Password=Gummiboll45;Connect Timeout=30;Encrypt=True;TrustServerCertificate=False");
         }
         public void Create(ICustomer customer)
         {
