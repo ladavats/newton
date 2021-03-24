@@ -1,5 +1,6 @@
 ﻿using Microsoft.Owin;
 using Microsoft.Owin.Security.OAuth;
+using newton.webapi.providers;
 using Owin;
 using System;
 using System.Threading.Tasks;
@@ -16,7 +17,7 @@ namespace newton.webapi.App_Start
             // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=316888
             app.UseCors(Microsoft.Owin.Cors.CorsOptions.AllowAll);
 
-            var myProvider = new MyAuthorizationServerProvider();
+            var myProvider = new OAuthWebApiAuthorizationServerProvider();
             OAuthAuthorizationServerOptions options = new OAuthAuthorizationServerOptions()
             {
                 AllowInsecureHttp = true,

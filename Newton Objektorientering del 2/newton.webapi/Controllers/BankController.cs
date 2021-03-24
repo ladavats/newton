@@ -32,7 +32,8 @@ namespace newton.webapi.Controllers
             return Ok();
         }
 
-        [AllowAnonymous]
+        
+        [Authorize(Roles = "user")]
         [HttpGet]
         [Route("api/bankaccounts")]
         public IHttpActionResult GetAllBankAccounts()
@@ -40,7 +41,7 @@ namespace newton.webapi.Controllers
             return Ok();
         }
 
-        [Authorize]
+        [Authorize(Roles = "admin")]
         [HttpGet]
         [Route("api/customers")]
         public IHttpActionResult GetAllCustomers()
