@@ -40,6 +40,11 @@ namespace newton.repository.repos
             throw new NotImplementedException();
         }
 
+        public IEnumerable<IBankAccount> GetAllBankAccounts()
+        {
+            throw new NotImplementedException();
+        }
+
         public IEnumerable<ICustomer> GetAllCustomers()
         {
             var customers = new List<ICustomer>();
@@ -75,12 +80,7 @@ namespace newton.repository.repos
             throw new NotImplementedException();
         }
 
-        void IBankAccountRepository.Delete(int accountId)
-        {
-            throw new NotImplementedException();
-        }
-
-        IEnumerable<IBankAccount> IBankAccountRepository.GetAllBankAccounts()
+        public IBankAccount Update(IBankAccount account)
         {
             throw new NotImplementedException();
         }
@@ -91,11 +91,6 @@ namespace newton.repository.repos
         }
 
         IBankAccount IBankAccountRepository.GetById(int accountId)
-        {
-            throw new NotImplementedException();
-        }
-
-        IBankAccount IBankAccountRepository.Update(IBankAccount account)
         {
             throw new NotImplementedException();
         }

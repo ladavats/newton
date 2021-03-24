@@ -13,12 +13,16 @@ namespace newton.webclient.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly string getCustomers = "https://localhost:44379/api/customers";
+        private readonly IApiEndpoints _apiendpoints;
+        public HomeController()
+        {
+            _apiendpoints = new AzureApiEndpoints();
+        }
         public ActionResult Index()
         {
             using (HttpClient client = new HttpClient())
             {
-                var response = client.GetAsync(getCustomers).Result;
+                var response = client.GetAsync(_apiendpoints.GetCustomers).Result;
                 if (response != null)
                 {
                     var jsonString = response.Content.ReadAsStringAsync().Result;
