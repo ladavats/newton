@@ -82,3 +82,15 @@ C:\Users\Admin\Desktop\Newton\github\Newton Objektorientering del 2\newton.webap
 C:\Users\Admin\Desktop\Newton\github\Newton Objektorientering del 2\newton.webapi\obj\Debug\newton.webapi.csproj.CopyComplete
 C:\Users\Admin\Desktop\Newton\github\Newton Objektorientering del 2\newton.webapi\obj\Debug\newton.webapi.dll
 C:\Users\Admin\Desktop\Newton\github\Newton Objektorientering del 2\newton.webapi\obj\Debug\newton.webapi.pdb
+C:\Users\Admin\Desktop\Newton\github\Newton Objektorientering del 2\newton.webapi\bin\Microsoft.Owin.Cors.dll
+C:\Users\Admin\Desktop\Newton\github\Newton Objektorientering del 2\newton.webapi\bin\Microsoft.Owin.dll
+C:\Users\Admin\Desktop\Newton\github\Newton Objektorientering del 2\newton.webapi\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Admin\Desktop\Newton\github\Newton Objektorientering del 2\newton.webapi\bin\Microsoft.Owin.Security.dll
+C:\Users\Admin\Desktop\Newton\github\Newton Objektorientering del 2\newton.webapi\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\Admin\Desktop\Newton\github\Newton Objektorientering del 2\newton.webapi\bin\Owin.dll
+C:\Users\Admin\Desktop\Newton\github\Newton Objektorientering del 2\newton.webapi\bin\System.Web.Cors.dll
+C:\Users\Admin\Desktop\Newton\github\Newton Objektorientering del 2\newton.webapi\bin\Microsoft.Owin.xml
+C:\Users\Admin\Desktop\Newton\github\Newton Objektorientering del 2\newton.webapi\bin\Microsoft.Owin.Cors.xml
+C:\Users\Admin\Desktop\Newton\github\Newton Objektorientering del 2\newton.webapi\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Admin\Desktop\Newton\github\Newton Objektorientering del 2\newton.webapi\bin\Microsoft.Owin.Security.xml
+C:\Users\Admin\Desktop\Newton\github\Newton Objektorientering del 2\newton.webapi\bin\Microsoft.Owin.Security.OAuth.xml
