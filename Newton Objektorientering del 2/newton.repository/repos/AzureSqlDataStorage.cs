@@ -22,17 +22,25 @@ namespace newton.repository.repos
         }
         public void Create(ICustomer customer)
         {
-            var newCustomer = new azure.Customer
+            try
             {
-                FirstName = customer.FirstName,
-                LastName = customer.LastName,
-                SocialSecurityNumber = customer.SocialSecurityNumber,
-                Info = "Customer is also a programmer",
-                YearlySalary = customer.YearlySalary
-            };
+                var newCustomer = new azure.Customer
+                {
+                    FirstName = customer.FirstName,
+                    LastName = customer.LastName,
+                    SocialSecurityNumber = customer.SocialSecurityNumber,
+                    Info = "Customer is also a programmer",
+                    YearlySalary = customer.YearlySalary
+                };
 
-            datacontext.Customers.InsertOnSubmit(newCustomer);
-            datacontext.SubmitChanges();
+                datacontext.Customers.InsertOnSubmit(newCustomer);
+                datacontext.SubmitChanges();
+            }
+            catch(Exception ex)
+            {
+                //Todo: Log Exception!
+            }
+
         }
 
         public void Delete(int customerId)

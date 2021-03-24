@@ -30,6 +30,15 @@ namespace newton.repository.azure
 		
     #region Extensibility Method Definitions
     partial void OnCreated();
+    partial void InsertBankAccount(BankAccount instance);
+    partial void UpdateBankAccount(BankAccount instance);
+    partial void DeleteBankAccount(BankAccount instance);
+    partial void InsertCustomer(Customer instance);
+    partial void UpdateCustomer(Customer instance);
+    partial void DeleteCustomer(Customer instance);
+    partial void InsertInsurance(Insurance instance);
+    partial void UpdateInsurance(Insurance instance);
+    partial void DeleteInsurance(Insurance instance);
     #endregion
 		
 		public azurebankdatabaseDataContext() : 
@@ -88,18 +97,31 @@ namespace newton.repository.azure
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.BankAccount")]
-	public partial class BankAccount
+	public partial class BankAccount : INotifyPropertyChanging, INotifyPropertyChanged
 	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
 		private int _Id;
 		
 		private int _Balance;
 		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnBalanceChanging(int value);
+    partial void OnBalanceChanged();
+    #endregion
+		
 		public BankAccount()
 		{
+			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.Always, DbType="Int NOT NULL IDENTITY", IsDbGenerated=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
 		public int Id
 		{
 			get
@@ -110,7 +132,11 @@ namespace newton.repository.azure
 			{
 				if ((this._Id != value))
 				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
 					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
 				}
 			}
 		}
@@ -126,15 +152,41 @@ namespace newton.repository.azure
 			{
 				if ((this._Balance != value))
 				{
+					this.OnBalanceChanging(value);
+					this.SendPropertyChanging();
 					this._Balance = value;
+					this.SendPropertyChanged("Balance");
+					this.OnBalanceChanged();
 				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Customer")]
-	public partial class Customer
+	public partial class Customer : INotifyPropertyChanging, INotifyPropertyChanged
 	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
 		private int _Id;
 		
@@ -148,11 +200,30 @@ namespace newton.repository.azure
 		
 		private double _YearlySalary;
 		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnFirstNameChanging(string value);
+    partial void OnFirstNameChanged();
+    partial void OnLastNameChanging(string value);
+    partial void OnLastNameChanged();
+    partial void OnSocialSecurityNumberChanging(string value);
+    partial void OnSocialSecurityNumberChanged();
+    partial void OnInfoChanging(string value);
+    partial void OnInfoChanged();
+    partial void OnYearlySalaryChanging(double value);
+    partial void OnYearlySalaryChanged();
+    #endregion
+		
 		public Customer()
 		{
+			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.Always, DbType="Int NOT NULL IDENTITY", IsDbGenerated=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
 		public int Id
 		{
 			get
@@ -163,7 +234,11 @@ namespace newton.repository.azure
 			{
 				if ((this._Id != value))
 				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
 					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
 				}
 			}
 		}
@@ -179,7 +254,11 @@ namespace newton.repository.azure
 			{
 				if ((this._FirstName != value))
 				{
+					this.OnFirstNameChanging(value);
+					this.SendPropertyChanging();
 					this._FirstName = value;
+					this.SendPropertyChanged("FirstName");
+					this.OnFirstNameChanged();
 				}
 			}
 		}
@@ -195,7 +274,11 @@ namespace newton.repository.azure
 			{
 				if ((this._LastName != value))
 				{
+					this.OnLastNameChanging(value);
+					this.SendPropertyChanging();
 					this._LastName = value;
+					this.SendPropertyChanged("LastName");
+					this.OnLastNameChanged();
 				}
 			}
 		}
@@ -211,7 +294,11 @@ namespace newton.repository.azure
 			{
 				if ((this._SocialSecurityNumber != value))
 				{
+					this.OnSocialSecurityNumberChanging(value);
+					this.SendPropertyChanging();
 					this._SocialSecurityNumber = value;
+					this.SendPropertyChanged("SocialSecurityNumber");
+					this.OnSocialSecurityNumberChanged();
 				}
 			}
 		}
@@ -227,7 +314,11 @@ namespace newton.repository.azure
 			{
 				if ((this._Info != value))
 				{
+					this.OnInfoChanging(value);
+					this.SendPropertyChanging();
 					this._Info = value;
+					this.SendPropertyChanged("Info");
+					this.OnInfoChanged();
 				}
 			}
 		}
@@ -243,15 +334,41 @@ namespace newton.repository.azure
 			{
 				if ((this._YearlySalary != value))
 				{
+					this.OnYearlySalaryChanging(value);
+					this.SendPropertyChanging();
 					this._YearlySalary = value;
+					this.SendPropertyChanged("YearlySalary");
+					this.OnYearlySalaryChanged();
 				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Insurance")]
-	public partial class Insurance
+	public partial class Insurance : INotifyPropertyChanging, INotifyPropertyChanged
 	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
 		private int _Id;
 		
@@ -261,11 +378,26 @@ namespace newton.repository.azure
 		
 		private string _Description;
 		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnCustomerIdChanging(int value);
+    partial void OnCustomerIdChanged();
+    partial void OnNameChanging(string value);
+    partial void OnNameChanged();
+    partial void OnDescriptionChanging(string value);
+    partial void OnDescriptionChanged();
+    #endregion
+		
 		public Insurance()
 		{
+			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.Always, DbType="Int NOT NULL IDENTITY", IsDbGenerated=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
 		public int Id
 		{
 			get
@@ -276,7 +408,11 @@ namespace newton.repository.azure
 			{
 				if ((this._Id != value))
 				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
 					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
 				}
 			}
 		}
@@ -292,7 +428,11 @@ namespace newton.repository.azure
 			{
 				if ((this._CustomerId != value))
 				{
+					this.OnCustomerIdChanging(value);
+					this.SendPropertyChanging();
 					this._CustomerId = value;
+					this.SendPropertyChanged("CustomerId");
+					this.OnCustomerIdChanged();
 				}
 			}
 		}
@@ -308,7 +448,11 @@ namespace newton.repository.azure
 			{
 				if ((this._Name != value))
 				{
+					this.OnNameChanging(value);
+					this.SendPropertyChanging();
 					this._Name = value;
+					this.SendPropertyChanged("Name");
+					this.OnNameChanged();
 				}
 			}
 		}
@@ -324,8 +468,32 @@ namespace newton.repository.azure
 			{
 				if ((this._Description != value))
 				{
+					this.OnDescriptionChanging(value);
+					this.SendPropertyChanging();
 					this._Description = value;
+					this.SendPropertyChanged("Description");
+					this.OnDescriptionChanged();
 				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}

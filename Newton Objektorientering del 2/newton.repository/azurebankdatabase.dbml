@@ -2,13 +2,13 @@
   <Connection Mode="AppSettings" ConnectionString="Data Source=newtonsqlserver.database.windows.net;Initial Catalog=bankdatabase;User ID=newtondbuser;Connect Timeout=30;Encrypt=True;TrustServerCertificate=False" SettingsObjectName="newton.repository.Properties.Settings" SettingsPropertyName="bankdatabaseConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.BankAccount" Member="BankAccounts">
     <Type Name="BankAccount">
-      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="Balance" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
   <Table Name="dbo.Customer" Member="Customers">
     <Type Name="Customer">
-      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="FirstName" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
       <Column Name="LastName" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
       <Column Name="SocialSecurityNumber" Type="System.String" DbType="NChar(12) NOT NULL" CanBeNull="false" />
@@ -18,7 +18,7 @@
   </Table>
   <Table Name="dbo.Insurance" Member="Insurances">
     <Type Name="Insurance">
-      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="CustomerId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="Name" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
       <Column Name="Description" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />

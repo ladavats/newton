@@ -1,0 +1,94 @@
+﻿@model newton.webclient.Models.CreateCustomerModel
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>ASP.NET</h1>
+    <p class="lead">This is the client. This is where all the GUI stuff will be for handeling the bank and its functions.</p>
+    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+    @using (Html.BeginForm("CreateCustomer", "Bank", FormMethod.Post))
+    {
+<table cellpadding="0" cellspacing="0">
+    <tr>
+        <th colspan="2" align="center">Person Details</th>
+    </tr>
+    <tr>
+        <td>Firstname: </td>
+        <td>
+            @Html.TextBoxFor(m => m.FirstName)
+        </td>
+    </tr>
+    <tr>
+        <td>Lastname: </td>
+        <td>
+            @Html.TextBoxFor(m => m.LastName)
+        </td>
+    </tr>
+    <tr>
+        <td>SocialSecurityNumber: </td>
+        <td>
+            @Html.TextBoxFor(m => m.SocialSecurityNumber)
+            <
+    <tr>
+        <td>Gender: </td>
+        <td>
+            @Html.DropDownListFor(m => m.Gender, new List<SelectListItem>
+           { new SelectListItem{Text="Male", Value="M"},
+             new SelectListItem{Text="Female", Value="F"}}, "Please select")
+        </td>
+    </tr>
+    <tr>
+        <td>City: </td>
+        <td>
+            @Html.TextBoxFor(m => m.City)
+        </td>
+
+        <td>Yearly Salary: </td>
+        <td>
+            @Html.TextBoxFor(m => m.YearlySalary)
+        </td>
+    </tr>
+    <tr>
+        <td></td>
+        <td><input type="submit" value="Submit" /></td>
+    </tr>
+    <tr><td><b>Existing customers:</b></td></tr>
+    @foreach(var customer in (List<newton.webclient.Models.CustomerListModel>)ViewBag.Customers) {
+<tr>
+    <td>@customer.FirstName</td>
+    <td>@customer.LastName</td>
+    <td>@customer.SocialSecurityNumber</td>
+    <td>&nbsp;&nbsp;&nbsp;&nbsp;@customer.Info</td>
+    <td>&nbsp;&nbsp;&nbsp;&nbsp;@customer.YearlySalary</td>
+</tr>    
+    }
+</table>
+    }
+
+
+
+</div>
+
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Getting started</h2>
+        <p>
+            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
+            enables a clean separation of concerns and gives you full control over markup
+            for enjoyable, agile development.
+        </p>
+        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Get more libraries</h2>
+        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
+        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Web Hosting</h2>
+        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
+        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+    </div>
+</div>

@@ -2,22 +2,22 @@
 <ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="azurebankdatabase">
   <DataContextMoniker Name="/azurebankdatabaseDataContext" />
   <nestedChildShapes>
-    <classShape Id="6d85e321-04c0-415f-9aa9-8dfd8a5d3f6f" absoluteBounds="0.75, 0.75, 2, 1.1939925130208335">
+    <classShape Id="ea0ca863-c4bb-4d40-96f9-ecee93fccce9" absoluteBounds="0.75, 0.75, 2, 1.1939925130208335">
       <DataClassMoniker Name="/azurebankdatabaseDataContext/BankAccount" />
       <nestedChildShapes>
-        <elementListCompartment Id="7becdb7c-bb36-4f38-963d-92014a9766e9" absoluteBounds="0.765, 1.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="ea6a3f1c-9978-4461-9180-3a90d5cf7daa" absoluteBounds="0.765, 1.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="071477e3-7d50-4a37-a8d7-3013ee14bc81" absoluteBounds="0.75, 2.75, 2, 1.9631982421875005">
+    <classShape Id="4e06e719-e4fa-4bf1-b642-59e078c3590c" absoluteBounds="0.75, 2.75, 2, 1.9631982421875005">
       <DataClassMoniker Name="/azurebankdatabaseDataContext/Customer" />
       <nestedChildShapes>
-        <elementListCompartment Id="3f7c9fb5-9d16-4032-aaf2-7a2147d51eee" absoluteBounds="0.765, 3.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="d0563d2b-7646-4f21-862c-faf04025c5c7" absoluteBounds="0.765, 3.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="1752d4c9-87cf-44a6-aac2-e24b2a58fd6d" absoluteBounds="3.75, 0.75, 2, 1.5785953776041666">
+    <classShape Id="87cfeb47-ebfb-496e-a2e1-8a7cb7a670c4" absoluteBounds="3.75, 0.75, 2, 1.5785953776041666">
       <DataClassMoniker Name="/azurebankdatabaseDataContext/Insurance" />
       <nestedChildShapes>
-        <elementListCompartment Id="e323faa7-cf15-46a4-8b90-c2268cd5db66" absoluteBounds="3.765, 1.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="dc46c9af-7891-4170-99d1-858d8f85aee7" absoluteBounds="3.765, 1.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>
