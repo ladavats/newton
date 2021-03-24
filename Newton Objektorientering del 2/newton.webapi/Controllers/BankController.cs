@@ -32,6 +32,7 @@ namespace newton.webapi.Controllers
             return Ok();
         }
 
+        [AllowAnonymous]
         [HttpGet]
         [Route("api/bankaccounts")]
         public IHttpActionResult GetAllBankAccounts()
@@ -39,6 +40,7 @@ namespace newton.webapi.Controllers
             return Ok();
         }
 
+        [Authorize]
         [HttpGet]
         [Route("api/customers")]
         public IHttpActionResult GetAllCustomers()
