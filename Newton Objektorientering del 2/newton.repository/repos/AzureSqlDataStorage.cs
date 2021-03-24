@@ -17,7 +17,7 @@ namespace newton.repository.repos
 
         public AzureSqlDataStorage()
         {
-            datacontext = new azure.azurebankdatabaseDataContext("Data Source=newtonsqlserver.database.windows.net;Initial Catalog=bankdatabase;User ID=newtondbuser;Password=Gummiboll45;Connect Timeout=30;Encrypt=True;TrustServerCertificate=False");
+            datacontext = new azure.azurebankdatabaseDataContext();
 
         }
         public void Create(ICustomer customer)
