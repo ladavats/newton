@@ -17,18 +17,17 @@ namespace newton.webapi.App_Start
             // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=316888
             app.UseCors(Microsoft.Owin.Cors.CorsOptions.AllowAll);
 
-            var myProvider = new OAuthWebApiAuthorizationServerProvider();
+            var newtonProvider = new OAuthWebApiAuthorizationServerProvider();
             OAuthAuthorizationServerOptions options = new OAuthAuthorizationServerOptions()
             {
                 AllowInsecureHttp = true,
                 TokenEndpointPath = new PathString("/token"),
                 AccessTokenExpireTimeSpan = TimeSpan.FromDays(1),
-                Provider = myProvider
-            };
+                Provider = newtonProvider
+            }; 
 
             app.UseOAuthAuthorizationServer(options);
             app.UseOAuthBearerAuthentication(new OAuthBearerAuthenticationOptions());
-
 
             HttpConfiguration config = new HttpConfiguration();
             WebApiConfig.Register(config);
