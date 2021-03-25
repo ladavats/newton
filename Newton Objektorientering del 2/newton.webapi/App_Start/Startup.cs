@@ -22,7 +22,7 @@ namespace newton.webapi.App_Start
             {
                 AllowInsecureHttp = true,
                 TokenEndpointPath = new PathString("/token"),
-                AccessTokenExpireTimeSpan = TimeSpan.FromDays(1),
+               AccessTokenExpireTimeSpan = TimeSpan.FromDays(1),
                 Provider = newtonProvider
             }; 
 

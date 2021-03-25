@@ -61,6 +61,7 @@ namespace newton.webapi.Controllers
         }
 
 
+        [Authorize(Roles = "createnewcustomer")]
         [HttpPost]
         [Route("api/customer")]
         public IHttpActionResult CreateCustomer(CreateCustomerRequestDto request)
