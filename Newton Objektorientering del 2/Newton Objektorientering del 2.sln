@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "newton.repository", "newton
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "newton.domain.models", "newton.domain.models\newton.domain.models.csproj", "{49C48726-F480-460B-869B-2D545DC6EC9D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "newton.infrastructure", "newton.infrastructure.logging\newton.infrastructure.csproj", "{8F8021CB-6321-40B1-ACCB-48DB8BC7C1A9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{49C48726-F480-460B-869B-2D545DC6EC9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{49C48726-F480-460B-869B-2D545DC6EC9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{49C48726-F480-460B-869B-2D545DC6EC9D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F8021CB-6321-40B1-ACCB-48DB8BC7C1A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F8021CB-6321-40B1-ACCB-48DB8BC7C1A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F8021CB-6321-40B1-ACCB-48DB8BC7C1A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F8021CB-6321-40B1-ACCB-48DB8BC7C1A9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

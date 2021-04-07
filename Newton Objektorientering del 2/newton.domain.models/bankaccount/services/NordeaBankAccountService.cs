@@ -1,4 +1,5 @@
 ﻿using newton.domain.models.bankaccount.interfaces;
+using newton.domain.models.customer.interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,6 +20,11 @@ namespace newton.domain.models.bankaccount.services
         {
             foreach (var account in accounts)
                 account.Withdraw(amount);
+        }
+
+        public ICustomer GetNonPrioratizedCustomer(int customerId)
+        {
+            return new customer.PrivateCustomer("","","",122);
         }
     }
 }

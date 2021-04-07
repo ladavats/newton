@@ -14,11 +14,10 @@ namespace newton.webclient.Controllers
 {
     public class BankController : Controller
     {
-        private readonly IApiEndpoints _apiendpoints;
-
+        private readonly IWebApiEndpoints _endpoints;
         public BankController()
         {
-            _apiendpoints = new AzureApiEndpoints();
+            _endpoints = new WebApiEndpoints();
         }
         public ActionResult Index()
         {
@@ -46,7 +45,7 @@ namespace newton.webclient.Controllers
             
             using (HttpClient client = new HttpClient())
             {
-                var response = client.PostAsync(new Uri(_apiendpoints.CreateCustomer), httpContent).Result;
+                var response = client.PostAsync(new Uri(_endpoints.CreateCustomer), httpContent).Result;
                 if (response.StatusCode != System.Net.HttpStatusCode.OK)
                     return View("Error");
             }

@@ -18,10 +18,10 @@ namespace newton.webclient.Controllers
     }
     public class HomeController : Controller
     {
-        private readonly IApiEndpoints _apiendpoints;
+        private readonly IWebApiEndpoints _endpoints;
         public HomeController()
         {
-            _apiendpoints = new AzureApiEndpoints();
+            _endpoints = new WebApiEndpoints();
         }
 
         private string GetToken(string username, string password)
@@ -64,7 +64,7 @@ namespace newton.webclient.Controllers
             {
                 var token = Session["OurBearerToken"].ToString(); //Where Username == username;
                 client.DefaultRequestHeaders.Add("Authorization", token);
-                var response = client.GetAsync(_apiendpoints.GetCustomers).Result;
+                var response = client.GetAsync(_endpoints.GetCustomers).Result;
                 if (response != null)
                 {
                     var jsonString = response.Content.ReadAsStringAsync().Result;

@@ -6,6 +6,8 @@ using SimpleInjector.Lifestyles;
 using System.Web.Http;
 using newton.domain.models.bankaccount.services;
 using newton.domain.models.bankaccount.interfaces;
+using newton.infrastructure.logging.logging.interfaces;
+using newton.infrastructure.logging.logging;
 
 namespace newton.webapi
 {
@@ -36,6 +38,7 @@ namespace newton.webapi
             container.Register<ICustomerRepository, AzureSqlDataStorage> (Lifestyle.Scoped);
             container.Register<IInsuranceRepository, AzureSqlDataStorage>(Lifestyle.Scoped);
             container.Register<IBankAccountRepository, AzureSqlDataStorage>(Lifestyle.Scoped);
+            container.Register<ILogger, AzureDatabaseLogger>(Lifestyle.Scoped);
             // This is an extension method from the integration package.
             container.RegisterWebApiControllers(GlobalConfiguration.Configuration);
 

@@ -1,0 +1,6 @@
+C:\Users\Admin\Desktop\Newton\github\Newton Objektorientering del 2\newton.infrastructure.logging\bin\Debug\newton.infrastructure.logging.dll
+C:\Users\Admin\Desktop\Newton\github\Newton Objektorientering del 2\newton.infrastructure.logging\bin\Debug\newton.infrastructure.logging.pdb
+C:\Users\Admin\Desktop\Newton\github\Newton Objektorientering del 2\newton.infrastructure.logging\obj\Debug\newton.infrastructure.csprojAssemblyReference.cache
+C:\Users\Admin\Desktop\Newton\github\Newton Objektorientering del 2\newton.infrastructure.logging\obj\Debug\newton.infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\Newton\github\Newton Objektorientering del 2\newton.infrastructure.logging\obj\Debug\newton.infrastructure.logging.dll
+C:\Users\Admin\Desktop\Newton\github\Newton Objektorientering del 2\newton.infrastructure.logging\obj\Debug\newton.infrastructure.logging.pdb

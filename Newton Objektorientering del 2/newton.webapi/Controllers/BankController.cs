@@ -2,7 +2,9 @@
 using newton.domain.models.customer;
 using newton.domain.models.customer.interfaces;
 using newton.dto;
+using newton.infrastructure.logging.logging.interfaces;
 using newton.repository.interfaces;
+using System;
 using System.Web.Http;
 
 namespace newton.webapi.Controllers
@@ -13,16 +15,19 @@ namespace newton.webapi.Controllers
         private readonly ICustomerRepository _customerRepository;
         private readonly IInsuranceRepository _insuranceRepository;
         private readonly IBankAccountRepository _bankaccountRepository;
+        private readonly ILogger _logger;
 
         public BankController(IBankAccountService bankaccountservice,
                                 ICustomerRepository customerRepository,
                                 IInsuranceRepository insurancerepository,
-                                IBankAccountRepository bankaccountRepository)
+                                IBankAccountRepository bankaccountRepository,
+                                ILogger logger)
         {
             this._bankaccountservice = bankaccountservice;
             this._customerRepository = customerRepository;
             this._insuranceRepository = insurancerepository;
             this._bankaccountRepository = bankaccountRepository;
+            this._logger = logger;
         }
 
         [HttpGet]
@@ -66,15 +71,22 @@ namespace newton.webapi.Controllers
         [Route("api/customer")]
         public IHttpActionResult CreateCustomer(CreateCustomerRequestDto request)
         {
-            ICustomer customer = CustomerFactory.CreateCustomer(request.FirstName, 
-                                                                request.LastName, 
-                                                                request.SocialSecurityNumber, 
-                                                                request.YearlySalary,
-                                                                request.Info);
+            try
+            {
+                ICustomer customer = CustomerFactory.CreateCustomer(request.FirstName,
+                                                                    request.LastName,
+                                                                    request.SocialSecurityNumber,
+                                                                    request.YearlySalary,
+                                                                    request.Info);
 
+                _customerRepository.Create(customer);
+            }
+            catch(Exception exception)
+            {
+                _logger.LogError("Customer could not be created", exception.ToString());
+            }
 
-            _customerRepository.Create(customer);
-
+            _logger.LogInfo("Customer created successfully");
             return Ok();
         }
     }

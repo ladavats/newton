@@ -38,7 +38,7 @@ namespace newton.repository.repos
             }
             catch(Exception ex)
             {
-                //Todo: Log Exception!
+                //ILog.Critical("Could not create Customer, ErrorMessage: " ex.ToString());
             }
 
         }
@@ -53,6 +53,12 @@ namespace newton.repository.repos
             throw new NotImplementedException();
         }
 
+
+        public HighPrioratizedPrivateCustomer GetPrivateNonPrioratizedCustomer()
+        {
+            return new HighPrioratizedPrivateCustomer("", "", "", "", 1);
+        }
+        
         public IEnumerable<ICustomer> GetAllCustomers()
         {
             var customers = new List<ICustomer>();
