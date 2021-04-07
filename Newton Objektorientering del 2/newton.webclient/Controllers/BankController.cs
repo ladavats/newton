@@ -1,4 +1,6 @@
 ﻿using newton.dto;
+using newton.infrastructure.logging.logging;
+using newton.infrastructure.logging.logging.interfaces;
 using newton.webclient.Models;
 using Newtonsoft.Json;
 using System;
@@ -15,9 +17,11 @@ namespace newton.webclient.Controllers
     public class BankController : Controller
     {
         private readonly IWebApiEndpoints _endpoints;
+        private readonly ILogger _logger;
         public BankController()
         {
             _endpoints = new WebApiEndpoints();
+            _logger = new AzureDatabaseLogger();
         }
         public ActionResult Index()
         {
@@ -35,35 +39,25 @@ namespace newton.webclient.Controllers
                 YearlySalary = model.YearlySalary
             };
 
-            string jsonCreateCustomer = JsonConvert.SerializeObject(createCustomerRequest);
-            var httpContent = new StringContent(jsonCreateCustomer, Encoding.UTF8, "application/json");
-
-            //Task, Threading example to understand Async / Syncront.
-            //ÖVA PÅ DETTA!
-            //System.Threading.Thread!
-            Task.Run(() => WaitOneSecond()).ContinueWith(task => WaitFiveSeconds());
-            
-            using (HttpClient client = new HttpClient())
+            try
             {
-                var response = client.PostAsync(new Uri(_endpoints.CreateCustomer), httpContent).Result;
-                if (response.StatusCode != System.Net.HttpStatusCode.OK)
-                    return View("Error");
+                string jsonCreateCustomer = JsonConvert.SerializeObject(createCustomerRequest);
+                var httpContent = new StringContent(jsonCreateCustomer, Encoding.UTF8, "application/json");
+
+                using (HttpClient client = new HttpClient())
+                {
+                    var response = client.PostAsync(new Uri(_endpoints.CreateCustomer), httpContent).Result;
+                    if (response.StatusCode != System.Net.HttpStatusCode.OK)
+                        return View("Error");
+                }
             }
-            
+            catch(Exception ex)
+            {
+                _logger.LogCriticalError("Could not create new Customer for UserInterface", ex.ToString());
+            }
+
+            _logger.LogInfo("Customer was created sucessfully");
             return View("~/Views/Customer/CustomerCreated.cshtml");
         }
-
-        static void WaitOneSecond()
-        {
-            System.Threading.Thread.Sleep(1000);
-        }
-
-        static void WaitFiveSeconds()
-        {
-            System.Threading.Thread.Sleep(5000);
-        }
     }
-
-
-    
 }

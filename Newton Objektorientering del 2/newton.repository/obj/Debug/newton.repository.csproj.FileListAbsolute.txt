@@ -8,3 +8,5 @@ C:\Users\Admin\Desktop\Newton\github\Newton Objektorientering del 2\newton.repos
 C:\Users\Admin\Desktop\Newton\github\Newton Objektorientering del 2\newton.repository\obj\Debug\newton.repository.csproj.CopyComplete
 C:\Users\Admin\Desktop\Newton\github\Newton Objektorientering del 2\newton.repository\obj\Debug\newton.repository.dll
 C:\Users\Admin\Desktop\Newton\github\Newton Objektorientering del 2\newton.repository\obj\Debug\newton.repository.pdb
+C:\Users\Admin\Desktop\Newton\github\Newton Objektorientering del 2\newton.repository\bin\Debug\newton.infrastructure.logging.dll
+C:\Users\Admin\Desktop\Newton\github\Newton Objektorientering del 2\newton.repository\bin\Debug\newton.infrastructure.logging.pdb

@@ -2,6 +2,8 @@
 using newton.domain.models.customer;
 using newton.domain.models.customer.interfaces;
 using newton.domain.models.insurance.interfaces;
+using newton.infrastructure.logging.logging;
+using newton.infrastructure.logging.logging.interfaces;
 using newton.repository.interfaces;
 using System;
 using System.Collections.Generic;
@@ -14,10 +16,12 @@ namespace newton.repository.repos
     public class AzureSqlDataStorage : ICustomerRepository, IInsuranceRepository, IBankAccountRepository
     {
         private readonly azure.azurebankdatabaseDataContext datacontext;
+        private readonly ILogger _logger;
 
         public AzureSqlDataStorage()
         {
             datacontext = new azure.azurebankdatabaseDataContext();
+            _logger = new AzureDatabaseLogger();
 
         }
         public void Create(ICustomer customer)
@@ -38,7 +42,7 @@ namespace newton.repository.repos
             }
             catch(Exception ex)
             {
-                //ILog.Critical("Could not create Customer, ErrorMessage: " ex.ToString());
+                _logger.LogCriticalError("Could not create customer in database", ex.ToString());
             }
 
         }

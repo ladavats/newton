@@ -79,3 +79,5 @@ C:\Users\Admin\Desktop\Newton\github\Newton Objektorientering del 2\newton.webcl
 C:\Users\Admin\Desktop\Newton\github\Newton Objektorientering del 2\newton.webclient\obj\Debug\newton.webclient.csproj.CopyComplete
 C:\Users\Admin\Desktop\Newton\github\Newton Objektorientering del 2\newton.webclient\obj\Debug\newton.webclient.dll
 C:\Users\Admin\Desktop\Newton\github\Newton Objektorientering del 2\newton.webclient\obj\Debug\newton.webclient.pdb
+C:\Users\Admin\Desktop\Newton\github\Newton Objektorientering del 2\newton.webclient\bin\newton.infrastructure.logging.dll
+C:\Users\Admin\Desktop\Newton\github\Newton Objektorientering del 2\newton.webclient\bin\newton.infrastructure.logging.pdb

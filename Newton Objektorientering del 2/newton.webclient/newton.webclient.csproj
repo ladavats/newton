@@ -191,6 +191,10 @@
       <Project>{1863366b-ad66-4fd4-809c-23a7d1c32dee}</Project>
       <Name>newton.dto</Name>
     </ProjectReference>
+    <ProjectReference Include="..\newton.infrastructure.logging\newton.infrastructure.csproj">
+      <Project>{8f8021cb-6321-40b1-accb-48db8bc7c1a9}</Project>
+      <Name>newton.infrastructure</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

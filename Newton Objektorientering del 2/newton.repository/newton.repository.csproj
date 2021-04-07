@@ -96,6 +96,10 @@
       <Project>{49c48726-f480-460b-869b-2d545dc6ec9d}</Project>
       <Name>newton.domain.models</Name>
     </ProjectReference>
+    <ProjectReference Include="..\newton.infrastructure.logging\newton.infrastructure.csproj">
+      <Project>{8f8021cb-6321-40b1-accb-48db8bc7c1a9}</Project>
+      <Name>newton.infrastructure</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
