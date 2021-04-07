@@ -36,5 +36,10 @@ namespace newton.domain.models.bankaccount
         {
             this.balance += amount;
         }
+
+        public void Highly()
+        {
+
+        }
     }
 }

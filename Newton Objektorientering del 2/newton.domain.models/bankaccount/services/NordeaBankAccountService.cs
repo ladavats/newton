@@ -26,5 +26,16 @@ namespace newton.domain.models.bankaccount.services
         {
             return new customer.PrivateCustomer("","","",122);
         }
+
+        public void Test(IList<IBankAccount> accounts)
+        {
+            IBankAccount bankaccount = accounts.FirstOrDefault();
+            
+            if (accounts.FirstOrDefault() is HighYearlyRateBankAccount)
+            {
+                ((HighYearlyRateBankAccount)bankaccount).Highly();
+            }
+                
+        }
     }
 }

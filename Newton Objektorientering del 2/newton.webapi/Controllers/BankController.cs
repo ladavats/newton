@@ -79,6 +79,7 @@ namespace newton.webapi.Controllers
                                                                     request.YearlySalary,
                                                                     request.Info);
 
+
                 _customerRepository.Create(customer);
             }
             catch(Exception exception)
